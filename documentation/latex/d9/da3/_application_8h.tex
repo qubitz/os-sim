@@ -1,0 +1,79 @@
+\hypertarget{_application_8h}{}\section{inc/\+Application.h File Reference}
+\label{_application_8h}\index{inc/\+Application.\+h@{inc/\+Application.\+h}}
+
+
+\hyperlink{class_application}{Application} class declaration for simulator C\+S446 project at University of Nevada, Reno.  
+
+
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$climits$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}Resource.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sim\+Data\+Structs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Simulator.\+h\char`\"{}}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_process_ctrl_block}{Process\+Ctrl\+Block}
+\begin{DoxyCompactList}\small\item\em Process control block. \end{DoxyCompactList}\item 
+class \hyperlink{class_application}{Application}
+\begin{DoxyCompactList}\small\item\em Holds and operates on application data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_application_8h_a373a58178f69d5e3e1de7516d105675e}{Process\+State} \{ \hyperlink{_application_8h_a373a58178f69d5e3e1de7516d105675eaec34b0b90541576a22697631105dc847}{N\+EW}, 
+\hyperlink{_application_8h_a373a58178f69d5e3e1de7516d105675ea6564f2f3e15be06b670547bbcaaf0798}{R\+E\+A\+DY}, 
+\hyperlink{_application_8h_a373a58178f69d5e3e1de7516d105675ea1061be6c3fb88d32829cba6f6b2be304}{R\+U\+N\+N\+I\+NG}, 
+\hyperlink{_application_8h_a373a58178f69d5e3e1de7516d105675ea7a10b5d68d31711288e1fe0fa17dbf4f}{E\+X\+IT}
+ \}\begin{DoxyCompactList}\small\item\em Process states. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_application}{Application} class declaration for simulator C\+S446 project at University of Nevada, Reno. 
+
+This file manages and controls an application
+
+\begin{DoxyAuthor}{Author}
+Tyler Goffinet
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+00 (17 September 16) 
+\end{DoxyVersion}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_application_8h_a373a58178f69d5e3e1de7516d105675e}{}\label{_application_8h_a373a58178f69d5e3e1de7516d105675e} 
+\index{Application.\+h@{Application.\+h}!Process\+State@{Process\+State}}
+\index{Process\+State@{Process\+State}!Application.\+h@{Application.\+h}}
+\subsubsection{\texorpdfstring{Process\+State}{ProcessState}}
+{\footnotesize\ttfamily enum \hyperlink{_application_8h_a373a58178f69d5e3e1de7516d105675e}{Process\+State}}
+
+
+
+Process states. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+EW@{N\+EW}!Application.\+h@{Application.\+h}}\index{Application.\+h@{Application.\+h}!N\+EW@{N\+EW}}}\hypertarget{_application_8h_a373a58178f69d5e3e1de7516d105675eaec34b0b90541576a22697631105dc847}{}\label{_application_8h_a373a58178f69d5e3e1de7516d105675eaec34b0b90541576a22697631105dc847} 
+N\+EW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+A\+DY@{R\+E\+A\+DY}!Application.\+h@{Application.\+h}}\index{Application.\+h@{Application.\+h}!R\+E\+A\+DY@{R\+E\+A\+DY}}}\hypertarget{_application_8h_a373a58178f69d5e3e1de7516d105675ea6564f2f3e15be06b670547bbcaaf0798}{}\label{_application_8h_a373a58178f69d5e3e1de7516d105675ea6564f2f3e15be06b670547bbcaaf0798} 
+R\+E\+A\+DY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+U\+N\+N\+I\+NG@{R\+U\+N\+N\+I\+NG}!Application.\+h@{Application.\+h}}\index{Application.\+h@{Application.\+h}!R\+U\+N\+N\+I\+NG@{R\+U\+N\+N\+I\+NG}}}\hypertarget{_application_8h_a373a58178f69d5e3e1de7516d105675ea1061be6c3fb88d32829cba6f6b2be304}{}\label{_application_8h_a373a58178f69d5e3e1de7516d105675ea1061be6c3fb88d32829cba6f6b2be304} 
+R\+U\+N\+N\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+IT@{E\+X\+IT}!Application.\+h@{Application.\+h}}\index{Application.\+h@{Application.\+h}!E\+X\+IT@{E\+X\+IT}}}\hypertarget{_application_8h_a373a58178f69d5e3e1de7516d105675ea7a10b5d68d31711288e1fe0fa17dbf4f}{}\label{_application_8h_a373a58178f69d5e3e1de7516d105675ea7a10b5d68d31711288e1fe0fa17dbf4f} 
+E\+X\+IT&\\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,192 @@
+\hypertarget{class_resource}{}\section{Resource Class Reference}
+\label{class_resource}\index{Resource@{Resource}}
+
+
+Maintains and controls resources.  
+
+
+
+
+{\ttfamily \#include $<$Resource.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_resource_aa66a88a5d14d251bead3660f7bcf1e37}{Resource} (int \hyperlink{class_resource_ad87427f8c53da8c83f4a00a2eef25f7f}{quantity})
+\begin{DoxyCompactList}\small\item\em Contructor for resource instance. \end{DoxyCompactList}\item 
+\hyperlink{class_resource_a0e5ec475e2601bdb33644468e86f6f10}{$\sim$\+Resource} ()
+\begin{DoxyCompactList}\small\item\em Destroys resource instance. \end{DoxyCompactList}\item 
+bool \hyperlink{class_resource_aeab97fd70f8ce65b0e883444642c3321}{available} ()
+\item 
+int \hyperlink{class_resource_a8d29438e770b809c58a646c0b527971b}{get\+Resource\+Index} (int pid)
+\begin{DoxyCompactList}\small\item\em Gets the resource index. \end{DoxyCompactList}\item 
+bool \hyperlink{class_resource_a269d0bd21401f93304f9b65837259444}{reserve} ()
+\begin{DoxyCompactList}\small\item\em Reserves resource. \end{DoxyCompactList}\item 
+void \hyperlink{class_resource_abbe4d6d7e9ee1fb34f53aede34acfdf4}{lock} (int pid)
+\begin{DoxyCompactList}\small\item\em Assigns and locks resource. \end{DoxyCompactList}\item 
+void \hyperlink{class_resource_a1b67c452867b328a40434ad1a94d0afd}{free} (int pid)
+\begin{DoxyCompactList}\small\item\em Frees resource. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_resource_a7af655f2da504607f1d35708dc479987}{init\+Member\+Arrays} ()
+\begin{DoxyCompactList}\small\item\em Initialize resouce and lock arrays. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$ \hyperlink{class_resource_a79fa88cc3a0abd81a39d5bcb159ccda3}{arr\+Resources}
+\item 
+bool $\ast$ \hyperlink{class_resource_a65c93bcbd07aa8e6d9b49176725e8b26}{locks}
+\item 
+int \hyperlink{class_resource_ad87427f8c53da8c83f4a00a2eef25f7f}{quantity}
+\item 
+int \hyperlink{class_resource_a108a01aac9b07a994e57cd50f283b4fa}{semaphore}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Maintains and controls resources. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_resource_aa66a88a5d14d251bead3660f7bcf1e37}{}\label{class_resource_aa66a88a5d14d251bead3660f7bcf1e37} 
+\index{Resource@{Resource}!Resource@{Resource}}
+\index{Resource@{Resource}!Resource@{Resource}}
+\subsubsection{\texorpdfstring{Resource()}{Resource()}}
+{\footnotesize\ttfamily Resource\+::\+Resource (\begin{DoxyParamCaption}\item[{int}]{quantity }\end{DoxyParamCaption})}
+
+
+
+Contructor for resource instance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em quantity} & Amount of resource \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_resource_a0e5ec475e2601bdb33644468e86f6f10}{}\label{class_resource_a0e5ec475e2601bdb33644468e86f6f10} 
+\index{Resource@{Resource}!````~Resource@{$\sim$\+Resource}}
+\index{````~Resource@{$\sim$\+Resource}!Resource@{Resource}}
+\subsubsection{\texorpdfstring{$\sim$\+Resource()}{~Resource()}}
+{\footnotesize\ttfamily Resource\+::$\sim$\+Resource (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroys resource instance. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_resource_aeab97fd70f8ce65b0e883444642c3321}{}\label{class_resource_aeab97fd70f8ce65b0e883444642c3321} 
+\index{Resource@{Resource}!available@{available}}
+\index{available@{available}!Resource@{Resource}}
+\subsubsection{\texorpdfstring{available()}{available()}}
+{\footnotesize\ttfamily bool Resource\+::available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hypertarget{class_resource_a1b67c452867b328a40434ad1a94d0afd}{}\label{class_resource_a1b67c452867b328a40434ad1a94d0afd} 
+\index{Resource@{Resource}!free@{free}}
+\index{free@{free}!Resource@{Resource}}
+\subsubsection{\texorpdfstring{free()}{free()}}
+{\footnotesize\ttfamily void Resource\+::free (\begin{DoxyParamCaption}\item[{int}]{pid }\end{DoxyParamCaption})}
+
+
+
+Frees resource. 
+
+Unassigns the increments semaphore.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pid} & The process id given in lock call \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_resource_a8d29438e770b809c58a646c0b527971b}{}\label{class_resource_a8d29438e770b809c58a646c0b527971b} 
+\index{Resource@{Resource}!get\+Resource\+Index@{get\+Resource\+Index}}
+\index{get\+Resource\+Index@{get\+Resource\+Index}!Resource@{Resource}}
+\subsubsection{\texorpdfstring{get\+Resource\+Index()}{getResourceIndex()}}
+{\footnotesize\ttfamily int Resource\+::get\+Resource\+Index (\begin{DoxyParamCaption}\item[{int}]{pid }\end{DoxyParamCaption})}
+
+
+
+Gets the resource index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pid} & The process id given in lock call\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resource index. 
+\end{DoxyReturn}
+\hypertarget{class_resource_a7af655f2da504607f1d35708dc479987}{}\label{class_resource_a7af655f2da504607f1d35708dc479987} 
+\index{Resource@{Resource}!init\+Member\+Arrays@{init\+Member\+Arrays}}
+\index{init\+Member\+Arrays@{init\+Member\+Arrays}!Resource@{Resource}}
+\subsubsection{\texorpdfstring{init\+Member\+Arrays()}{initMemberArrays()}}
+{\footnotesize\ttfamily void Resource\+::init\+Member\+Arrays (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialize resouce and lock arrays. 
+
+Assign resource array with -\/1\textquotesingle{}s and locks with false. \hypertarget{class_resource_abbe4d6d7e9ee1fb34f53aede34acfdf4}{}\label{class_resource_abbe4d6d7e9ee1fb34f53aede34acfdf4} 
+\index{Resource@{Resource}!lock@{lock}}
+\index{lock@{lock}!Resource@{Resource}}
+\subsubsection{\texorpdfstring{lock()}{lock()}}
+{\footnotesize\ttfamily void Resource\+::lock (\begin{DoxyParamCaption}\item[{int}]{pid }\end{DoxyParamCaption})}
+
+
+
+Assigns and locks resource. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pid} & The process id \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_resource_a269d0bd21401f93304f9b65837259444}{}\label{class_resource_a269d0bd21401f93304f9b65837259444} 
+\index{Resource@{Resource}!reserve@{reserve}}
+\index{reserve@{reserve}!Resource@{Resource}}
+\subsubsection{\texorpdfstring{reserve()}{reserve()}}
+{\footnotesize\ttfamily bool Resource\+::reserve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reserves resource. 
+
+Decrements semaphore if a resource is available.
+
+\begin{DoxyReturn}{Returns}
+Returns true if resource can be reserved, false otherwise. 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_resource_a79fa88cc3a0abd81a39d5bcb159ccda3}{}\label{class_resource_a79fa88cc3a0abd81a39d5bcb159ccda3} 
+\index{Resource@{Resource}!arr\+Resources@{arr\+Resources}}
+\index{arr\+Resources@{arr\+Resources}!Resource@{Resource}}
+\subsubsection{\texorpdfstring{arr\+Resources}{arrResources}}
+{\footnotesize\ttfamily int$\ast$ Resource\+::arr\+Resources\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_resource_a65c93bcbd07aa8e6d9b49176725e8b26}{}\label{class_resource_a65c93bcbd07aa8e6d9b49176725e8b26} 
+\index{Resource@{Resource}!locks@{locks}}
+\index{locks@{locks}!Resource@{Resource}}
+\subsubsection{\texorpdfstring{locks}{locks}}
+{\footnotesize\ttfamily bool$\ast$ Resource\+::locks\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_resource_ad87427f8c53da8c83f4a00a2eef25f7f}{}\label{class_resource_ad87427f8c53da8c83f4a00a2eef25f7f} 
+\index{Resource@{Resource}!quantity@{quantity}}
+\index{quantity@{quantity}!Resource@{Resource}}
+\subsubsection{\texorpdfstring{quantity}{quantity}}
+{\footnotesize\ttfamily int Resource\+::quantity\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_resource_a108a01aac9b07a994e57cd50f283b4fa}{}\label{class_resource_a108a01aac9b07a994e57cd50f283b4fa} 
+\index{Resource@{Resource}!semaphore@{semaphore}}
+\index{semaphore@{semaphore}!Resource@{Resource}}
+\subsubsection{\texorpdfstring{semaphore}{semaphore}}
+{\footnotesize\ttfamily int Resource\+::semaphore\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inc/\hyperlink{_resource_8h}{Resource.\+h}\item 
+src/\hyperlink{_resource_8cpp}{Resource.\+cpp}\end{DoxyCompactItemize}

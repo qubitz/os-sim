@@ -1,0 +1,605 @@
+\hypertarget{class_simulator}{}\section{Simulator Class Reference}
+\label{class_simulator}\index{Simulator@{Simulator}}
+
+
+Prepares and executes operating system simulation.  
+
+
+
+
+{\ttfamily \#include $<$Simulator.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simulator_a5511e015f97c2695d3bfb5e003ab4d76}{Simulator} (const char $\ast$config\+Path)
+\begin{DoxyCompactList}\small\item\em Contructor for \hyperlink{class_simulator}{Simulator} class. \end{DoxyCompactList}\item 
+\hyperlink{class_simulator_a0f49aa04f42060a785adf77346b9de9f}{$\sim$\+Simulator} ()
+\item 
+bool \hyperlink{class_simulator_a7d7856e9c21592f0754b1825014674cc}{initialize} ()
+\begin{DoxyCompactList}\small\item\em Initializes simulator. \end{DoxyCompactList}\item 
+bool \hyperlink{class_simulator_afd158369264143934398ac97c61c9b9e}{run} ()
+\begin{DoxyCompactList}\small\item\em Runs simulator. \end{DoxyCompactList}\item 
+string \hyperlink{class_simulator_a18d712f028a9b09f131b48a0ca79c056}{get\+Error} ()
+\item 
+unsigned int \hyperlink{class_simulator_ab73a18e336c76ea75edb7750d933b867}{get\+Memory\+Address} ()
+\begin{DoxyCompactList}\small\item\em Gets the next memory address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_simulator_a435acd1b33b92d62c93e7753d44630dd}{load\+Config} ()
+\begin{DoxyCompactList}\small\item\em Loads configuration file into \textquotesingle{}config\textquotesingle{} private variable. \end{DoxyCompactList}\item 
+bool \hyperlink{class_simulator_a2291f67b3ef8be115f4bb34e035b2acc}{load\+Metadata} ()
+\begin{DoxyCompactList}\small\item\em Loads metadata file into \textquotesingle{}metadata\textquotesingle{} private variable. \end{DoxyCompactList}\item 
+bool \hyperlink{class_simulator_a8fe2c4165b8ce64b915b3f1cb4b68eae}{parse\+Meta\+Token} (std\+::string meta\+Token, \hyperlink{struct_metadata}{Metadata} \&data)
+\begin{DoxyCompactList}\small\item\em Parse a metadata token. \end{DoxyCompactList}\item 
+bool \hyperlink{class_simulator_ae032a5b2c6f4bb5ae3f129b070b37998}{contruct\+Operations} ()
+\begin{DoxyCompactList}\small\item\em Contructs the metadata metrics. \end{DoxyCompactList}\item 
+int \hyperlink{class_simulator_ad89fec9f00924c116670418f2dd43b14}{get\+Config\+Data} (\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165}{Config\+Category} category)
+\begin{DoxyCompactList}\small\item\em Gets the configuration data of specified category. \end{DoxyCompactList}\item 
+bool \hyperlink{class_simulator_a8cf2f0d42cabac22dc4b6eda745189ae}{load\+Output\+Settings} ()
+\begin{DoxyCompactList}\small\item\em Retrieves and stores simulator output configurations. \end{DoxyCompactList}\item 
+bool \hyperlink{class_simulator_a19639209921d8abc828d14e319df637e}{load\+Operations} ()
+\begin{DoxyCompactList}\small\item\em Runs metadata. \end{DoxyCompactList}\item 
+bool \hyperlink{class_simulator_a71f3f54a1da19c9434f6f6811727691d}{run\+Scheduler} ()
+\begin{DoxyCompactList}\small\item\em Runs the application scheduler. \end{DoxyCompactList}\item 
+bool \hyperlink{class_simulator_a0245347cd0c75ec9d30f108d794cd7a6}{output\+Results\+To\+File} ()
+\begin{DoxyCompactList}\small\item\em Outputs results to file if specified. \end{DoxyCompactList}\item 
+bool \hyperlink{class_simulator_a9ddc90646b161542172481657319383d}{output\+Config} ()
+\begin{DoxyCompactList}\small\item\em Outputs simulator configuration results. \end{DoxyCompactList}\item 
+bool \hyperlink{class_simulator_af2c84f4f2111c69cc6608901b45e067e}{output\+Metrics} ()
+\begin{DoxyCompactList}\small\item\em Outputs simulator metrics results. \end{DoxyCompactList}\item 
+void \hyperlink{class_simulator_a7980ffee280efa8378e800c37686793e}{output\+Sys\+Operation} (unsigned int pid, std\+::string output, bool output\+Time)
+\begin{DoxyCompactList}\small\item\em Log system operation output to the file/monirotr as specified. \end{DoxyCompactList}\item 
+bool \hyperlink{class_simulator_ac46d8139df251d81fea195e6c628bd2e}{get\+Tokens} (std\+::string file\+Name, std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \&file\+Tokens, boost\+::char\+\_\+separator$<$ char $>$ delimiter)
+\begin{DoxyCompactList}\small\item\em Gets tokens from the given file. \end{DoxyCompactList}\item 
+string \hyperlink{class_simulator_a60c731cb40b4e6093cd1f73e35d70ee8}{get\+Token\+String} (const std\+::vector$<$ std\+::string $>$ \&tokens)
+\begin{DoxyCompactList}\small\item\em Gets the token string. \end{DoxyCompactList}\item 
+string \hyperlink{class_simulator_a5d211715eb26466cd5f67cdbef66c581}{get\+Token\+String} (const std\+::vector$<$ std\+::string $>$ \&tokens, unsigned int end\+Index)
+\begin{DoxyCompactList}\small\item\em Gets the token string. \end{DoxyCompactList}\item 
+string \hyperlink{class_simulator_ac3deed54edd4354e79f396a614a944de}{get\+Token\+String} (const std\+::vector$<$ std\+::string $>$ \&tokens, unsigned int start\+Index, unsigned int end\+Index)
+\begin{DoxyCompactList}\small\item\em Gets the token string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct timeval \hyperlink{class_simulator_a7ea88bc5971154f70055f76ecef021c9}{system\+Start\+Time}
+\item 
+std\+::vector$<$ \hyperlink{class_application}{Application} $\ast$ $>$ \hyperlink{class_simulator_adcc7cd2ee35795c8fa75a4e8c596b8bc}{applications}
+\item 
+std\+::vector$<$ \hyperlink{struct_configdata}{Configdata} $>$ \hyperlink{class_simulator_a0652336abca9dfc9a4e7abfa898fd639}{config}
+\item 
+std\+::vector$<$ \hyperlink{struct_metadata}{Metadata} $>$ \hyperlink{class_simulator_a4280898fdb4f5e2fe78eba77b7030bbc}{metadata}
+\item 
+std\+::vector$<$ \hyperlink{struct_operation}{Operation} $>$ \hyperlink{class_simulator_af0de92f112f7c366965c9c2ab3252e71}{operations}
+\item 
+\hyperlink{class_resource}{Resource} $\ast$ \hyperlink{class_simulator_a12e757d91db13aba3ab215b38c62f786}{printers}
+\item 
+\hyperlink{class_resource}{Resource} $\ast$ \hyperlink{class_simulator_ad9769c8acac3f878df047f28456d0082}{harddrives}
+\item 
+\hyperlink{class_resource}{Resource} $\ast$ \hyperlink{class_simulator_a947713e8c1b2cca9cf7700cad78dadf7}{keyboards}
+\item 
+\hyperlink{class_resource}{Resource} $\ast$ \hyperlink{class_simulator_adc7b9cba44f12566307e77741b6b15db}{monitors}
+\item 
+std\+::string \hyperlink{class_simulator_a7ef7a1e509bc344a6da592b979a7a09d}{config\+File}
+\item 
+bool \hyperlink{class_simulator_a5019732b443ef422efaf1b4e846a2768}{initialized}
+\item 
+std\+::string \hyperlink{class_simulator_ae1327302343c01ea0e127bd3486a7780}{file\+Output}
+\item 
+std\+::string \hyperlink{class_simulator_a8eeeadc65c37bf60d76832e501502259}{log\+File\+Path}
+\item 
+bool \hyperlink{class_simulator_a895e164e17a22b56e31a30ddf12f3067}{log\+To\+File}
+\item 
+bool \hyperlink{class_simulator_a7ae7d7fc57479dad16e8aab5397da7ce}{log\+To\+Monitor}
+\item 
+int \hyperlink{class_simulator_ad08c7310760168dd2014336ae3790ee3}{used\+Blocks}
+\item 
+std\+::string \hyperlink{class_simulator_ac5b8100ebe53ef360a973a4fb4891019}{error}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const boost\+::char\+\_\+separator$<$ char $>$ \hyperlink{class_simulator_af589419d1bbe6d3e516836252fcc3694}{C\+O\+N\+F\+I\+G\+\_\+\+T\+O\+K\+E\+N\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ER}
+\item 
+static const boost\+::char\+\_\+separator$<$ char $>$ \hyperlink{class_simulator_a6c36f9f56a6286593ad414bfc9d2d015}{M\+E\+T\+A\+\_\+\+T\+O\+K\+E\+N\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ER}
+\item 
+static const std\+::string \hyperlink{class_simulator_adaa721df0fa68ec8257b20b39b78f8ae}{C\+O\+N\+F\+I\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+Y\+N\+T\+AX}
+\item 
+static const std\+::string \hyperlink{class_simulator_ae875eb33920f03c59e4c9a290b77c09a}{C\+O\+N\+F\+I\+G\+\_\+\+E\+N\+D\+\_\+\+S\+Y\+N\+T\+AX} = \char`\"{}End \hyperlink{class_simulator}{Simulator} Configuration File\char`\"{}
+\item 
+static const std\+::string \hyperlink{class_simulator_ada63d5f4468a4265417286a0fb4ec0bb}{M\+E\+T\+A\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+Y\+N\+T\+AX} = \char`\"{}Start Program Meta-\/Data Code\char`\"{}
+\item 
+static const std\+::string \hyperlink{class_simulator_a91ee5a9047af12c49f4db088acb077f2}{M\+E\+T\+A\+\_\+\+E\+N\+D\+\_\+\+S\+Y\+N\+T\+AX} = \char`\"{}End Program Meta-\/Data Code\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Prepares and executes operating system simulation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_simulator_a5511e015f97c2695d3bfb5e003ab4d76}{}\label{class_simulator_a5511e015f97c2695d3bfb5e003ab4d76} 
+\index{Simulator@{Simulator}!Simulator@{Simulator}}
+\index{Simulator@{Simulator}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{Simulator()}{Simulator()}}
+{\footnotesize\ttfamily Simulator\+::\+Simulator (\begin{DoxyParamCaption}\item[{const char $\ast$}]{config\+Path }\end{DoxyParamCaption})}
+
+
+
+Contructor for \hyperlink{class_simulator}{Simulator} class. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config\+Path} & The configuration file path. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_simulator_a0f49aa04f42060a785adf77346b9de9f}{}\label{class_simulator_a0f49aa04f42060a785adf77346b9de9f} 
+\index{Simulator@{Simulator}!````~Simulator@{$\sim$\+Simulator}}
+\index{````~Simulator@{$\sim$\+Simulator}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{$\sim$\+Simulator()}{~Simulator()}}
+{\footnotesize\ttfamily Simulator\+::$\sim$\+Simulator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_simulator_ae032a5b2c6f4bb5ae3f129b070b37998}{}\label{class_simulator_ae032a5b2c6f4bb5ae3f129b070b37998} 
+\index{Simulator@{Simulator}!contruct\+Operations@{contruct\+Operations}}
+\index{contruct\+Operations@{contruct\+Operations}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{contruct\+Operations()}{contructOperations()}}
+{\footnotesize\ttfamily bool Simulator\+::contruct\+Operations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contructs the metadata metrics. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape true} if operation successful, {\itshape false} otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_simulator_ad89fec9f00924c116670418f2dd43b14}{}\label{class_simulator_ad89fec9f00924c116670418f2dd43b14} 
+\index{Simulator@{Simulator}!get\+Config\+Data@{get\+Config\+Data}}
+\index{get\+Config\+Data@{get\+Config\+Data}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{get\+Config\+Data()}{getConfigData()}}
+{\footnotesize\ttfamily int Simulator\+::get\+Config\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165}{Config\+Category}}]{category }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the configuration data of specified category. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em category} & The configuration category\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The configuration data. -\/1 if category not found or invalid config data. 
+\end{DoxyReturn}
+\hypertarget{class_simulator_a18d712f028a9b09f131b48a0ca79c056}{}\label{class_simulator_a18d712f028a9b09f131b48a0ca79c056} 
+\index{Simulator@{Simulator}!get\+Error@{get\+Error}}
+\index{get\+Error@{get\+Error}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{get\+Error()}{getError()}}
+{\footnotesize\ttfamily string Simulator\+::get\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hypertarget{class_simulator_ab73a18e336c76ea75edb7750d933b867}{}\label{class_simulator_ab73a18e336c76ea75edb7750d933b867} 
+\index{Simulator@{Simulator}!get\+Memory\+Address@{get\+Memory\+Address}}
+\index{get\+Memory\+Address@{get\+Memory\+Address}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{get\+Memory\+Address()}{getMemoryAddress()}}
+{\footnotesize\ttfamily unsigned int Simulator\+::get\+Memory\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the next memory address. 
+
+Increments by block size
+
+\begin{DoxyReturn}{Returns}
+The memory address.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Retruns U\+I\+N\+T\+\_\+\+M\+AX if error or out of memory 
+\end{DoxyNote}
+\hypertarget{class_simulator_ac46d8139df251d81fea195e6c628bd2e}{}\label{class_simulator_ac46d8139df251d81fea195e6c628bd2e} 
+\index{Simulator@{Simulator}!get\+Tokens@{get\+Tokens}}
+\index{get\+Tokens@{get\+Tokens}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{get\+Tokens()}{getTokens()}}
+{\footnotesize\ttfamily bool Simulator\+::get\+Tokens (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name,  }\item[{std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \&}]{file\+Tokens,  }\item[{boost\+::char\+\_\+separator$<$ char $>$}]{delimiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets tokens from the given file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file\+Name} & The file name \\
+\hline
+\mbox{\tt in}  & {\em file\+Tokens} & The \textquotesingle{}vector\textquotesingle{} of line tokens \\
+\hline
+\mbox{\tt in}  & {\em delimiter} & The token delimiter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape true} if operation successful, {\itshape false} otherwise 
+\end{DoxyReturn}
+\hypertarget{class_simulator_a60c731cb40b4e6093cd1f73e35d70ee8}{}\label{class_simulator_a60c731cb40b4e6093cd1f73e35d70ee8} 
+\index{Simulator@{Simulator}!get\+Token\+String@{get\+Token\+String}}
+\index{get\+Token\+String@{get\+Token\+String}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{get\+Token\+String()}{getTokenString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily string Simulator\+::get\+Token\+String (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{tokens }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the token string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tokens} & The tokens\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The string form of the selected tokens. 
+\end{DoxyReturn}
+\hypertarget{class_simulator_a5d211715eb26466cd5f67cdbef66c581}{}\label{class_simulator_a5d211715eb26466cd5f67cdbef66c581} 
+\index{Simulator@{Simulator}!get\+Token\+String@{get\+Token\+String}}
+\index{get\+Token\+String@{get\+Token\+String}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{get\+Token\+String()}{getTokenString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily string Simulator\+::get\+Token\+String (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{tokens,  }\item[{unsigned int}]{end\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the token string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tokens} & The tokens \\
+\hline
+\mbox{\tt in}  & {\em end\+Index} & The end index\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The string form of the selected tokens. 
+\end{DoxyReturn}
+\hypertarget{class_simulator_ac3deed54edd4354e79f396a614a944de}{}\label{class_simulator_ac3deed54edd4354e79f396a614a944de} 
+\index{Simulator@{Simulator}!get\+Token\+String@{get\+Token\+String}}
+\index{get\+Token\+String@{get\+Token\+String}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{get\+Token\+String()}{getTokenString()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily string Simulator\+::get\+Token\+String (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{tokens,  }\item[{unsigned int}]{start\+Index,  }\item[{unsigned int}]{end\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the token string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tokens} & The tokens \\
+\hline
+\mbox{\tt in}  & {\em start\+Index} & The start index \\
+\hline
+\mbox{\tt in}  & {\em end\+Index} & The end index\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The string form of the selected tokens. 
+\end{DoxyReturn}
+\hypertarget{class_simulator_a7d7856e9c21592f0754b1825014674cc}{}\label{class_simulator_a7d7856e9c21592f0754b1825014674cc} 
+\index{Simulator@{Simulator}!initialize@{initialize}}
+\index{initialize@{initialize}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily bool Simulator\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes simulator. 
+
+Loads and parses config and metadata files.
+
+\begin{DoxyReturn}{Returns}
+{\itshape true} if simulator successfully initialized, {\itshape false} otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_simulator_a435acd1b33b92d62c93e7753d44630dd}{}\label{class_simulator_a435acd1b33b92d62c93e7753d44630dd} 
+\index{Simulator@{Simulator}!load\+Config@{load\+Config}}
+\index{load\+Config@{load\+Config}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{load\+Config()}{loadConfig()}}
+{\footnotesize\ttfamily bool Simulator\+::load\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads configuration file into \textquotesingle{}config\textquotesingle{} private variable. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape true} if operation successful, {\itshape false} otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_simulator_a2291f67b3ef8be115f4bb34e035b2acc}{}\label{class_simulator_a2291f67b3ef8be115f4bb34e035b2acc} 
+\index{Simulator@{Simulator}!load\+Metadata@{load\+Metadata}}
+\index{load\+Metadata@{load\+Metadata}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{load\+Metadata()}{loadMetadata()}}
+{\footnotesize\ttfamily bool Simulator\+::load\+Metadata (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads metadata file into \textquotesingle{}metadata\textquotesingle{} private variable. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape true} if operation successful, {\itshape false} otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_simulator_a19639209921d8abc828d14e319df637e}{}\label{class_simulator_a19639209921d8abc828d14e319df637e} 
+\index{Simulator@{Simulator}!load\+Operations@{load\+Operations}}
+\index{load\+Operations@{load\+Operations}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{load\+Operations()}{loadOperations()}}
+{\footnotesize\ttfamily bool Simulator\+::load\+Operations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Runs metadata. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape true} if operation successful, {\itshape false} otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_simulator_a8cf2f0d42cabac22dc4b6eda745189ae}{}\label{class_simulator_a8cf2f0d42cabac22dc4b6eda745189ae} 
+\index{Simulator@{Simulator}!load\+Output\+Settings@{load\+Output\+Settings}}
+\index{load\+Output\+Settings@{load\+Output\+Settings}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{load\+Output\+Settings()}{loadOutputSettings()}}
+{\footnotesize\ttfamily bool Simulator\+::load\+Output\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Retrieves and stores simulator output configurations. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape true} if operation successful, {\itshape false} otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_simulator_a9ddc90646b161542172481657319383d}{}\label{class_simulator_a9ddc90646b161542172481657319383d} 
+\index{Simulator@{Simulator}!output\+Config@{output\+Config}}
+\index{output\+Config@{output\+Config}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{output\+Config()}{outputConfig()}}
+{\footnotesize\ttfamily bool Simulator\+::output\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Outputs simulator configuration results. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape true} if operation successful, {\itshape false} otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_simulator_af2c84f4f2111c69cc6608901b45e067e}{}\label{class_simulator_af2c84f4f2111c69cc6608901b45e067e} 
+\index{Simulator@{Simulator}!output\+Metrics@{output\+Metrics}}
+\index{output\+Metrics@{output\+Metrics}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{output\+Metrics()}{outputMetrics()}}
+{\footnotesize\ttfamily bool Simulator\+::output\+Metrics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Outputs simulator metrics results. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape true} if operation successful, {\itshape false} otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_simulator_a0245347cd0c75ec9d30f108d794cd7a6}{}\label{class_simulator_a0245347cd0c75ec9d30f108d794cd7a6} 
+\index{Simulator@{Simulator}!output\+Results\+To\+File@{output\+Results\+To\+File}}
+\index{output\+Results\+To\+File@{output\+Results\+To\+File}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{output\+Results\+To\+File()}{outputResultsToFile()}}
+{\footnotesize\ttfamily bool Simulator\+::output\+Results\+To\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Outputs results to file if specified. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape true} if operation successful, {\itshape false} otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_simulator_a7980ffee280efa8378e800c37686793e}{}\label{class_simulator_a7980ffee280efa8378e800c37686793e} 
+\index{Simulator@{Simulator}!output\+Sys\+Operation@{output\+Sys\+Operation}}
+\index{output\+Sys\+Operation@{output\+Sys\+Operation}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{output\+Sys\+Operation()}{outputSysOperation()}}
+{\footnotesize\ttfamily void Simulator\+::output\+Sys\+Operation (\begin{DoxyParamCaption}\item[{unsigned int}]{pid,  }\item[{std\+::string}]{output,  }\item[{bool}]{output\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Log system operation output to the file/monirotr as specified. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pid} & Process id \\
+\hline
+\mbox{\tt in}  & {\em output} & String to output \\
+\hline
+\mbox{\tt in}  & {\em output\+Time} & Whether to output time stamp \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_simulator_a8fe2c4165b8ce64b915b3f1cb4b68eae}{}\label{class_simulator_a8fe2c4165b8ce64b915b3f1cb4b68eae} 
+\index{Simulator@{Simulator}!parse\+Meta\+Token@{parse\+Meta\+Token}}
+\index{parse\+Meta\+Token@{parse\+Meta\+Token}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{parse\+Meta\+Token()}{parseMetaToken()}}
+{\footnotesize\ttfamily bool Simulator\+::parse\+Meta\+Token (\begin{DoxyParamCaption}\item[{std\+::string}]{meta\+Token,  }\item[{\hyperlink{struct_metadata}{Metadata} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parse a metadata token. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em meta\+Token} & The metadata token \\
+\hline
+\mbox{\tt out}  & {\em data} & The \hyperlink{struct_metadata}{Metadata} struct\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape true} if operation successful, {\itshape false} otherwise 
+\end{DoxyReturn}
+\hypertarget{class_simulator_afd158369264143934398ac97c61c9b9e}{}\label{class_simulator_afd158369264143934398ac97c61c9b9e} 
+\index{Simulator@{Simulator}!run@{run}}
+\index{run@{run}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily bool Simulator\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Runs simulator. 
+
+Processes metadata and outputs results.
+
+\begin{DoxyReturn}{Returns}
+{\itshape true} if simulator successfully ran, {\itshape false} otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_simulator_a71f3f54a1da19c9434f6f6811727691d}{}\label{class_simulator_a71f3f54a1da19c9434f6f6811727691d} 
+\index{Simulator@{Simulator}!run\+Scheduler@{run\+Scheduler}}
+\index{run\+Scheduler@{run\+Scheduler}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{run\+Scheduler()}{runScheduler()}}
+{\footnotesize\ttfamily bool Simulator\+::run\+Scheduler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Runs the application scheduler. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape true} if operation successful, {\itshape false} otherwise. 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_simulator_adcc7cd2ee35795c8fa75a4e8c596b8bc}{}\label{class_simulator_adcc7cd2ee35795c8fa75a4e8c596b8bc} 
+\index{Simulator@{Simulator}!applications@{applications}}
+\index{applications@{applications}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{applications}{applications}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{class_application}{Application} $\ast$$>$ Simulator\+::applications\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_simulator_a0652336abca9dfc9a4e7abfa898fd639}{}\label{class_simulator_a0652336abca9dfc9a4e7abfa898fd639} 
+\index{Simulator@{Simulator}!config@{config}}
+\index{config@{config}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{config}{config}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{struct_configdata}{Configdata}$>$ Simulator\+::config\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_simulator_ae875eb33920f03c59e4c9a290b77c09a}{}\label{class_simulator_ae875eb33920f03c59e4c9a290b77c09a} 
+\index{Simulator@{Simulator}!C\+O\+N\+F\+I\+G\+\_\+\+E\+N\+D\+\_\+\+S\+Y\+N\+T\+AX@{C\+O\+N\+F\+I\+G\+\_\+\+E\+N\+D\+\_\+\+S\+Y\+N\+T\+AX}}
+\index{C\+O\+N\+F\+I\+G\+\_\+\+E\+N\+D\+\_\+\+S\+Y\+N\+T\+AX@{C\+O\+N\+F\+I\+G\+\_\+\+E\+N\+D\+\_\+\+S\+Y\+N\+T\+AX}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{C\+O\+N\+F\+I\+G\+\_\+\+E\+N\+D\+\_\+\+S\+Y\+N\+T\+AX}{CONFIG\_END\_SYNTAX}}
+{\footnotesize\ttfamily const string Simulator\+::\+C\+O\+N\+F\+I\+G\+\_\+\+E\+N\+D\+\_\+\+S\+Y\+N\+T\+AX = \char`\"{}End \hyperlink{class_simulator}{Simulator} Configuration File\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\hypertarget{class_simulator_adaa721df0fa68ec8257b20b39b78f8ae}{}\label{class_simulator_adaa721df0fa68ec8257b20b39b78f8ae} 
+\index{Simulator@{Simulator}!C\+O\+N\+F\+I\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+Y\+N\+T\+AX@{C\+O\+N\+F\+I\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+Y\+N\+T\+AX}}
+\index{C\+O\+N\+F\+I\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+Y\+N\+T\+AX@{C\+O\+N\+F\+I\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+Y\+N\+T\+AX}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{C\+O\+N\+F\+I\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+Y\+N\+T\+AX}{CONFIG\_START\_SYNTAX}}
+{\footnotesize\ttfamily const string Simulator\+::\+C\+O\+N\+F\+I\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+Y\+N\+T\+AX\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+    \textcolor{stringliteral}{"Start Simulator Configuration File"}
+\end{DoxyCode}
+\hypertarget{class_simulator_af589419d1bbe6d3e516836252fcc3694}{}\label{class_simulator_af589419d1bbe6d3e516836252fcc3694} 
+\index{Simulator@{Simulator}!C\+O\+N\+F\+I\+G\+\_\+\+T\+O\+K\+E\+N\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ER@{C\+O\+N\+F\+I\+G\+\_\+\+T\+O\+K\+E\+N\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ER}}
+\index{C\+O\+N\+F\+I\+G\+\_\+\+T\+O\+K\+E\+N\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ER@{C\+O\+N\+F\+I\+G\+\_\+\+T\+O\+K\+E\+N\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ER}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{C\+O\+N\+F\+I\+G\+\_\+\+T\+O\+K\+E\+N\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ER}{CONFIG\_TOKEN\_DELIMITER}}
+{\footnotesize\ttfamily const boost\+::char\+\_\+separator$<$ char $>$ Simulator\+::\+C\+O\+N\+F\+I\+G\+\_\+\+T\+O\+K\+E\+N\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ER\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\hypertarget{class_simulator_a7ef7a1e509bc344a6da592b979a7a09d}{}\label{class_simulator_a7ef7a1e509bc344a6da592b979a7a09d} 
+\index{Simulator@{Simulator}!config\+File@{config\+File}}
+\index{config\+File@{config\+File}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{config\+File}{configFile}}
+{\footnotesize\ttfamily std\+::string Simulator\+::config\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_simulator_ac5b8100ebe53ef360a973a4fb4891019}{}\label{class_simulator_ac5b8100ebe53ef360a973a4fb4891019} 
+\index{Simulator@{Simulator}!error@{error}}
+\index{error@{error}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily std\+::string Simulator\+::error\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_simulator_ae1327302343c01ea0e127bd3486a7780}{}\label{class_simulator_ae1327302343c01ea0e127bd3486a7780} 
+\index{Simulator@{Simulator}!file\+Output@{file\+Output}}
+\index{file\+Output@{file\+Output}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{file\+Output}{fileOutput}}
+{\footnotesize\ttfamily std\+::string Simulator\+::file\+Output\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_simulator_ad9769c8acac3f878df047f28456d0082}{}\label{class_simulator_ad9769c8acac3f878df047f28456d0082} 
+\index{Simulator@{Simulator}!harddrives@{harddrives}}
+\index{harddrives@{harddrives}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{harddrives}{harddrives}}
+{\footnotesize\ttfamily \hyperlink{class_resource}{Resource}$\ast$ Simulator\+::harddrives\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_simulator_a5019732b443ef422efaf1b4e846a2768}{}\label{class_simulator_a5019732b443ef422efaf1b4e846a2768} 
+\index{Simulator@{Simulator}!initialized@{initialized}}
+\index{initialized@{initialized}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily bool Simulator\+::initialized\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_simulator_a947713e8c1b2cca9cf7700cad78dadf7}{}\label{class_simulator_a947713e8c1b2cca9cf7700cad78dadf7} 
+\index{Simulator@{Simulator}!keyboards@{keyboards}}
+\index{keyboards@{keyboards}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{keyboards}{keyboards}}
+{\footnotesize\ttfamily \hyperlink{class_resource}{Resource}$\ast$ Simulator\+::keyboards\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_simulator_a8eeeadc65c37bf60d76832e501502259}{}\label{class_simulator_a8eeeadc65c37bf60d76832e501502259} 
+\index{Simulator@{Simulator}!log\+File\+Path@{log\+File\+Path}}
+\index{log\+File\+Path@{log\+File\+Path}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{log\+File\+Path}{logFilePath}}
+{\footnotesize\ttfamily std\+::string Simulator\+::log\+File\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_simulator_a895e164e17a22b56e31a30ddf12f3067}{}\label{class_simulator_a895e164e17a22b56e31a30ddf12f3067} 
+\index{Simulator@{Simulator}!log\+To\+File@{log\+To\+File}}
+\index{log\+To\+File@{log\+To\+File}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{log\+To\+File}{logToFile}}
+{\footnotesize\ttfamily bool Simulator\+::log\+To\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_simulator_a7ae7d7fc57479dad16e8aab5397da7ce}{}\label{class_simulator_a7ae7d7fc57479dad16e8aab5397da7ce} 
+\index{Simulator@{Simulator}!log\+To\+Monitor@{log\+To\+Monitor}}
+\index{log\+To\+Monitor@{log\+To\+Monitor}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{log\+To\+Monitor}{logToMonitor}}
+{\footnotesize\ttfamily bool Simulator\+::log\+To\+Monitor\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_simulator_a91ee5a9047af12c49f4db088acb077f2}{}\label{class_simulator_a91ee5a9047af12c49f4db088acb077f2} 
+\index{Simulator@{Simulator}!M\+E\+T\+A\+\_\+\+E\+N\+D\+\_\+\+S\+Y\+N\+T\+AX@{M\+E\+T\+A\+\_\+\+E\+N\+D\+\_\+\+S\+Y\+N\+T\+AX}}
+\index{M\+E\+T\+A\+\_\+\+E\+N\+D\+\_\+\+S\+Y\+N\+T\+AX@{M\+E\+T\+A\+\_\+\+E\+N\+D\+\_\+\+S\+Y\+N\+T\+AX}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{M\+E\+T\+A\+\_\+\+E\+N\+D\+\_\+\+S\+Y\+N\+T\+AX}{META\_END\_SYNTAX}}
+{\footnotesize\ttfamily const string Simulator\+::\+M\+E\+T\+A\+\_\+\+E\+N\+D\+\_\+\+S\+Y\+N\+T\+AX = \char`\"{}End Program Meta-\/Data Code\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\hypertarget{class_simulator_ada63d5f4468a4265417286a0fb4ec0bb}{}\label{class_simulator_ada63d5f4468a4265417286a0fb4ec0bb} 
+\index{Simulator@{Simulator}!M\+E\+T\+A\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+Y\+N\+T\+AX@{M\+E\+T\+A\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+Y\+N\+T\+AX}}
+\index{M\+E\+T\+A\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+Y\+N\+T\+AX@{M\+E\+T\+A\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+Y\+N\+T\+AX}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{M\+E\+T\+A\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+Y\+N\+T\+AX}{META\_START\_SYNTAX}}
+{\footnotesize\ttfamily const string Simulator\+::\+M\+E\+T\+A\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+Y\+N\+T\+AX = \char`\"{}Start Program Meta-\/Data Code\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\hypertarget{class_simulator_a6c36f9f56a6286593ad414bfc9d2d015}{}\label{class_simulator_a6c36f9f56a6286593ad414bfc9d2d015} 
+\index{Simulator@{Simulator}!M\+E\+T\+A\+\_\+\+T\+O\+K\+E\+N\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ER@{M\+E\+T\+A\+\_\+\+T\+O\+K\+E\+N\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ER}}
+\index{M\+E\+T\+A\+\_\+\+T\+O\+K\+E\+N\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ER@{M\+E\+T\+A\+\_\+\+T\+O\+K\+E\+N\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ER}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{M\+E\+T\+A\+\_\+\+T\+O\+K\+E\+N\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ER}{META\_TOKEN\_DELIMITER}}
+{\footnotesize\ttfamily const boost\+::char\+\_\+separator$<$ char $>$ Simulator\+::\+M\+E\+T\+A\+\_\+\+T\+O\+K\+E\+N\+\_\+\+D\+E\+L\+I\+M\+I\+T\+ER\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\hypertarget{class_simulator_a4280898fdb4f5e2fe78eba77b7030bbc}{}\label{class_simulator_a4280898fdb4f5e2fe78eba77b7030bbc} 
+\index{Simulator@{Simulator}!metadata@{metadata}}
+\index{metadata@{metadata}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{metadata}{metadata}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{struct_metadata}{Metadata}$>$ Simulator\+::metadata\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_simulator_adc7b9cba44f12566307e77741b6b15db}{}\label{class_simulator_adc7b9cba44f12566307e77741b6b15db} 
+\index{Simulator@{Simulator}!monitors@{monitors}}
+\index{monitors@{monitors}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{monitors}{monitors}}
+{\footnotesize\ttfamily \hyperlink{class_resource}{Resource}$\ast$ Simulator\+::monitors\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_simulator_af0de92f112f7c366965c9c2ab3252e71}{}\label{class_simulator_af0de92f112f7c366965c9c2ab3252e71} 
+\index{Simulator@{Simulator}!operations@{operations}}
+\index{operations@{operations}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{operations}{operations}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{struct_operation}{Operation}$>$ Simulator\+::operations\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_simulator_a12e757d91db13aba3ab215b38c62f786}{}\label{class_simulator_a12e757d91db13aba3ab215b38c62f786} 
+\index{Simulator@{Simulator}!printers@{printers}}
+\index{printers@{printers}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{printers}{printers}}
+{\footnotesize\ttfamily \hyperlink{class_resource}{Resource}$\ast$ Simulator\+::printers\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_simulator_a7ea88bc5971154f70055f76ecef021c9}{}\label{class_simulator_a7ea88bc5971154f70055f76ecef021c9} 
+\index{Simulator@{Simulator}!system\+Start\+Time@{system\+Start\+Time}}
+\index{system\+Start\+Time@{system\+Start\+Time}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{system\+Start\+Time}{systemStartTime}}
+{\footnotesize\ttfamily struct timeval Simulator\+::system\+Start\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_simulator_ad08c7310760168dd2014336ae3790ee3}{}\label{class_simulator_ad08c7310760168dd2014336ae3790ee3} 
+\index{Simulator@{Simulator}!used\+Blocks@{used\+Blocks}}
+\index{used\+Blocks@{used\+Blocks}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{used\+Blocks}{usedBlocks}}
+{\footnotesize\ttfamily int Simulator\+::used\+Blocks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inc/\hyperlink{_simulator_8h}{Simulator.\+h}\item 
+src/\hyperlink{_simulator_8cpp}{Simulator.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,372 @@
+\hypertarget{_sim_data_structs_8h}{}\section{inc/\+Sim\+Data\+Structs.h File Reference}
+\label{_sim_data_structs_8h}\index{inc/\+Sim\+Data\+Structs.\+h@{inc/\+Sim\+Data\+Structs.\+h}}
+
+
+\hyperlink{class_simulator}{Simulator} data structure and functions for simulator C\+S446 project at University of Nevada, Reno.  
+
+
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include \char`\"{}Resource.\+h\char`\"{}}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_configdata}{Configdata}
+\begin{DoxyCompactList}\small\item\em Structure to hold configuration data parsed from file. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_metadata}{Metadata}
+\begin{DoxyCompactList}\small\item\em Structure to hold metadata parsed from file. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_operation}{Operation}
+\begin{DoxyCompactList}\small\item\em Structure to hold metadata metrics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165}{Config\+Category} \{ \newline
+\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165aedbbfa6b14afe66d2de1c8a38d26e0ed}{C\+\_\+\+V\+E\+R\+S\+I\+ON}, 
+\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165abfb4643f544bff527ee8cc4767685b69}{C\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH}, 
+\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a05049274fd428501bbc836b3bfac8df2}{C\+\_\+\+P\+R\+O\+C\+E\+S\+S\+OR}, 
+\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165af6b6da0a8654b0df343d20a0023bb403}{C\+\_\+\+M\+O\+N\+I\+T\+OR}, 
+\newline
+\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165abbeb46c8aa54d3723703324e2b94a40f}{C\+\_\+\+Q\+U\+A\+N\+\_\+\+M\+O\+N\+I\+T\+OR}, 
+\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a7d8b1b85057201aa391ae017e016e3d1}{C\+\_\+\+H\+A\+R\+D\+\_\+\+D\+R\+I\+VE}, 
+\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a3adfc8bbd7b12e9c97b2f6c052aebd3e}{C\+\_\+\+Q\+U\+A\+N\+\_\+\+H\+DD}, 
+\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ab59a14322087f191d312ec26a4271fd4}{C\+\_\+\+P\+R\+I\+N\+T\+ER}, 
+\newline
+\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ae2c9a0528c8d056bbee5bcbb996609c8}{C\+\_\+\+Q\+U\+A\+N\+\_\+\+P\+R\+I\+N\+T\+ER}, 
+\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ac46b28c9ed00cdc35159e13005c8c14a}{C\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}, 
+\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a331e8dbd029fd071e8874f4bb088cb92}{C\+\_\+\+Q\+U\+A\+N\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}, 
+\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ae91ff3cb8a09508f7f92fed655b35be5}{C\+\_\+\+M\+E\+M\+O\+RY}, 
+\newline
+\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ac9150000d951d9d92c3fa8a4f8215779}{C\+\_\+\+S\+Y\+S\+\_\+\+M\+E\+M\+O\+RY}, 
+\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ac68a312a9ea5686c067c279948dcceb5}{C\+\_\+\+B\+L\+O\+C\+K\+\_\+\+M\+E\+M\+O\+RY}, 
+\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a237c9e76999c08aaa0b3fa2e6b9c96cf}{C\+\_\+\+L\+OG}, 
+\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a455ddaad149c529e095fbfa45988de9c}{C\+\_\+\+L\+O\+G\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH}
+ \}\begin{DoxyCompactList}\small\item\em Configuration categories. \end{DoxyCompactList}
+\item 
+enum \hyperlink{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516}{Meta\+Code} \{ \newline
+\hyperlink{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516a0a2ce9dbaf41623d6b721275fd1b527e}{M\+\_\+\+O\+P\+E\+R\+\_\+\+S\+YS}, 
+\hyperlink{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516a53bc029afe822a363fa87b45def3674f}{M\+\_\+\+P\+R\+O\+G\+R\+A\+M\+\_\+\+A\+PP}, 
+\hyperlink{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516a2a28e24e91d997a2669dee0d3a6e441b}{M\+\_\+\+P\+R\+O\+C\+E\+SS}, 
+\hyperlink{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516a1db3ae498d49d699ba7aecbcc9fdcd64}{M\+\_\+\+I\+N\+P\+UT}, 
+\newline
+\hyperlink{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516afbe1661cc1f9f9360324c8d7db73c42c}{M\+\_\+\+O\+U\+T\+P\+UT}, 
+\hyperlink{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516a6a318ad57207f9e297dc6606a9b1de36}{M\+\_\+\+M\+E\+M\+O\+RY}
+ \}\begin{DoxyCompactList}\small\item\em \hyperlink{struct_metadata}{Metadata} code. \end{DoxyCompactList}
+\item 
+enum \hyperlink{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6}{Meta\+Desc} \{ \newline
+\hyperlink{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6a1f5fe8eb11ed9b69d851c4e797030c12}{M\+\_\+\+S\+T\+A\+RT}, 
+\hyperlink{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6a9ba20817f9d08698b0ac9238b525492b}{M\+\_\+\+R\+UN}, 
+\hyperlink{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6ac386bc31cf11dd167c2719ee836d9bec}{M\+\_\+\+E\+ND}, 
+\hyperlink{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6a668a2783f5f59dfc18adf6b1395764e2}{M\+\_\+\+A\+L\+L\+OC}, 
+\newline
+\hyperlink{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6a03bc038776a053629197e78663d6bff9}{M\+\_\+\+P\+R\+I\+N\+T\+ER}, 
+\hyperlink{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6aa36e6f6485781d5efe624652e1de0c08}{M\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}, 
+\hyperlink{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6a6b5211fad8824fe5db4c66b3f4416307}{M\+\_\+\+H\+A\+R\+D\+\_\+\+D\+R\+I\+VE}, 
+\hyperlink{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6adf417211e35fe0b31f9cba1be33df34d}{M\+\_\+\+M\+O\+N\+I\+T\+OR}, 
+\newline
+\hyperlink{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6af2413db6070583845c79a1b3cffb97e6}{M\+\_\+\+C\+A\+C\+HE}
+ \}\begin{DoxyCompactList}\small\item\em \hyperlink{struct_metadata}{Metadata} descriptor. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \hyperlink{_sim_data_structs_8h_abb975842c33f234db92dd499da918e38}{config\+Cat\+To\+String} (\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165}{Config\+Category} cat)
+\begin{DoxyCompactList}\small\item\em Converts config category enum to std\+::string. \end{DoxyCompactList}\item 
+static std\+::string \hyperlink{_sim_data_structs_8h_a6cdbb3a565d76f5a328a0e22344b5d51}{meta\+Code\+To\+String} (\hyperlink{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516}{Meta\+Code} code)
+\begin{DoxyCompactList}\small\item\em Converts metadata code enum to std\+::string. \end{DoxyCompactList}\item 
+static std\+::string \hyperlink{_sim_data_structs_8h_a23437e0e99fe92685efa5f9a5db75c12}{meta\+Desc\+To\+String} (\hyperlink{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6}{Meta\+Desc} desc)
+\begin{DoxyCompactList}\small\item\em Converts metadata description enum to std\+::string. \end{DoxyCompactList}\item 
+static std\+::string \hyperlink{_sim_data_structs_8h_a22e5b169d39bc3bf4acf9ec5eed94146}{metadata\+To\+String} (\hyperlink{struct_metadata}{Metadata} meta)
+\begin{DoxyCompactList}\small\item\em Converts metadta struct to std\+::string. \end{DoxyCompactList}\item 
+static float \hyperlink{_sim_data_structs_8h_a24e011e884483975565ddb23b8b293c1}{get\+Time} (struct timeval ref\+Time)
+\begin{DoxyCompactList}\small\item\em Gets the time. \end{DoxyCompactList}\item 
+static std\+::string \hyperlink{_sim_data_structs_8h_ab01de293f615315354afae658d45ad76}{get\+Time\+Stamp} (struct timeval ref\+Time)
+\begin{DoxyCompactList}\small\item\em Gets a time stamp. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_simulator}{Simulator} data structure and functions for simulator C\+S446 project at University of Nevada, Reno. 
+
+This file contains data structures and functions essential for the simulator.
+
+\begin{DoxyAuthor}{Author}
+Tyler Goffinet
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+00 (17 September 16) 
+\end{DoxyVersion}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165}{}\label{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165} 
+\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!Config\+Category@{Config\+Category}}
+\index{Config\+Category@{Config\+Category}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}
+\subsubsection{\texorpdfstring{Config\+Category}{ConfigCategory}}
+{\footnotesize\ttfamily enum \hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165}{Config\+Category}}
+
+
+
+Configuration categories. 
+
+Ex\+: \char`\"{}\+Version\char`\"{}, \char`\"{}\+File Path\char`\"{}, etc. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+\_\+\+V\+E\+R\+S\+I\+ON@{C\+\_\+\+V\+E\+R\+S\+I\+ON}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!C\+\_\+\+V\+E\+R\+S\+I\+ON@{C\+\_\+\+V\+E\+R\+S\+I\+ON}}}\hypertarget{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165aedbbfa6b14afe66d2de1c8a38d26e0ed}{}\label{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165aedbbfa6b14afe66d2de1c8a38d26e0ed} 
+C\+\_\+\+V\+E\+R\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH@{C\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!C\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH@{C\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH}}}\hypertarget{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165abfb4643f544bff527ee8cc4767685b69}{}\label{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165abfb4643f544bff527ee8cc4767685b69} 
+C\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+\_\+\+P\+R\+O\+C\+E\+S\+S\+OR@{C\+\_\+\+P\+R\+O\+C\+E\+S\+S\+OR}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!C\+\_\+\+P\+R\+O\+C\+E\+S\+S\+OR@{C\+\_\+\+P\+R\+O\+C\+E\+S\+S\+OR}}}\hypertarget{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a05049274fd428501bbc836b3bfac8df2}{}\label{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a05049274fd428501bbc836b3bfac8df2} 
+C\+\_\+\+P\+R\+O\+C\+E\+S\+S\+OR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+\_\+\+M\+O\+N\+I\+T\+OR@{C\+\_\+\+M\+O\+N\+I\+T\+OR}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!C\+\_\+\+M\+O\+N\+I\+T\+OR@{C\+\_\+\+M\+O\+N\+I\+T\+OR}}}\hypertarget{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165af6b6da0a8654b0df343d20a0023bb403}{}\label{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165af6b6da0a8654b0df343d20a0023bb403} 
+C\+\_\+\+M\+O\+N\+I\+T\+OR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+\_\+\+Q\+U\+A\+N\+\_\+\+M\+O\+N\+I\+T\+OR@{C\+\_\+\+Q\+U\+A\+N\+\_\+\+M\+O\+N\+I\+T\+OR}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!C\+\_\+\+Q\+U\+A\+N\+\_\+\+M\+O\+N\+I\+T\+OR@{C\+\_\+\+Q\+U\+A\+N\+\_\+\+M\+O\+N\+I\+T\+OR}}}\hypertarget{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165abbeb46c8aa54d3723703324e2b94a40f}{}\label{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165abbeb46c8aa54d3723703324e2b94a40f} 
+C\+\_\+\+Q\+U\+A\+N\+\_\+\+M\+O\+N\+I\+T\+OR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+\_\+\+H\+A\+R\+D\+\_\+\+D\+R\+I\+VE@{C\+\_\+\+H\+A\+R\+D\+\_\+\+D\+R\+I\+VE}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!C\+\_\+\+H\+A\+R\+D\+\_\+\+D\+R\+I\+VE@{C\+\_\+\+H\+A\+R\+D\+\_\+\+D\+R\+I\+VE}}}\hypertarget{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a7d8b1b85057201aa391ae017e016e3d1}{}\label{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a7d8b1b85057201aa391ae017e016e3d1} 
+C\+\_\+\+H\+A\+R\+D\+\_\+\+D\+R\+I\+VE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+\_\+\+Q\+U\+A\+N\+\_\+\+H\+DD@{C\+\_\+\+Q\+U\+A\+N\+\_\+\+H\+DD}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!C\+\_\+\+Q\+U\+A\+N\+\_\+\+H\+DD@{C\+\_\+\+Q\+U\+A\+N\+\_\+\+H\+DD}}}\hypertarget{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a3adfc8bbd7b12e9c97b2f6c052aebd3e}{}\label{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a3adfc8bbd7b12e9c97b2f6c052aebd3e} 
+C\+\_\+\+Q\+U\+A\+N\+\_\+\+H\+DD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+\_\+\+P\+R\+I\+N\+T\+ER@{C\+\_\+\+P\+R\+I\+N\+T\+ER}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!C\+\_\+\+P\+R\+I\+N\+T\+ER@{C\+\_\+\+P\+R\+I\+N\+T\+ER}}}\hypertarget{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ab59a14322087f191d312ec26a4271fd4}{}\label{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ab59a14322087f191d312ec26a4271fd4} 
+C\+\_\+\+P\+R\+I\+N\+T\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+\_\+\+Q\+U\+A\+N\+\_\+\+P\+R\+I\+N\+T\+ER@{C\+\_\+\+Q\+U\+A\+N\+\_\+\+P\+R\+I\+N\+T\+ER}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!C\+\_\+\+Q\+U\+A\+N\+\_\+\+P\+R\+I\+N\+T\+ER@{C\+\_\+\+Q\+U\+A\+N\+\_\+\+P\+R\+I\+N\+T\+ER}}}\hypertarget{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ae2c9a0528c8d056bbee5bcbb996609c8}{}\label{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ae2c9a0528c8d056bbee5bcbb996609c8} 
+C\+\_\+\+Q\+U\+A\+N\+\_\+\+P\+R\+I\+N\+T\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+\_\+\+K\+E\+Y\+B\+O\+A\+RD@{C\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!C\+\_\+\+K\+E\+Y\+B\+O\+A\+RD@{C\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}}}\hypertarget{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ac46b28c9ed00cdc35159e13005c8c14a}{}\label{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ac46b28c9ed00cdc35159e13005c8c14a} 
+C\+\_\+\+K\+E\+Y\+B\+O\+A\+RD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+\_\+\+Q\+U\+A\+N\+\_\+\+K\+E\+Y\+B\+O\+A\+RD@{C\+\_\+\+Q\+U\+A\+N\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!C\+\_\+\+Q\+U\+A\+N\+\_\+\+K\+E\+Y\+B\+O\+A\+RD@{C\+\_\+\+Q\+U\+A\+N\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}}}\hypertarget{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a331e8dbd029fd071e8874f4bb088cb92}{}\label{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a331e8dbd029fd071e8874f4bb088cb92} 
+C\+\_\+\+Q\+U\+A\+N\+\_\+\+K\+E\+Y\+B\+O\+A\+RD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+\_\+\+M\+E\+M\+O\+RY@{C\+\_\+\+M\+E\+M\+O\+RY}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!C\+\_\+\+M\+E\+M\+O\+RY@{C\+\_\+\+M\+E\+M\+O\+RY}}}\hypertarget{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ae91ff3cb8a09508f7f92fed655b35be5}{}\label{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ae91ff3cb8a09508f7f92fed655b35be5} 
+C\+\_\+\+M\+E\+M\+O\+RY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+\_\+\+S\+Y\+S\+\_\+\+M\+E\+M\+O\+RY@{C\+\_\+\+S\+Y\+S\+\_\+\+M\+E\+M\+O\+RY}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!C\+\_\+\+S\+Y\+S\+\_\+\+M\+E\+M\+O\+RY@{C\+\_\+\+S\+Y\+S\+\_\+\+M\+E\+M\+O\+RY}}}\hypertarget{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ac9150000d951d9d92c3fa8a4f8215779}{}\label{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ac9150000d951d9d92c3fa8a4f8215779} 
+C\+\_\+\+S\+Y\+S\+\_\+\+M\+E\+M\+O\+RY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+\_\+\+B\+L\+O\+C\+K\+\_\+\+M\+E\+M\+O\+RY@{C\+\_\+\+B\+L\+O\+C\+K\+\_\+\+M\+E\+M\+O\+RY}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!C\+\_\+\+B\+L\+O\+C\+K\+\_\+\+M\+E\+M\+O\+RY@{C\+\_\+\+B\+L\+O\+C\+K\+\_\+\+M\+E\+M\+O\+RY}}}\hypertarget{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ac68a312a9ea5686c067c279948dcceb5}{}\label{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165ac68a312a9ea5686c067c279948dcceb5} 
+C\+\_\+\+B\+L\+O\+C\+K\+\_\+\+M\+E\+M\+O\+RY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+\_\+\+L\+OG@{C\+\_\+\+L\+OG}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!C\+\_\+\+L\+OG@{C\+\_\+\+L\+OG}}}\hypertarget{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a237c9e76999c08aaa0b3fa2e6b9c96cf}{}\label{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a237c9e76999c08aaa0b3fa2e6b9c96cf} 
+C\+\_\+\+L\+OG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+\_\+\+L\+O\+G\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH@{C\+\_\+\+L\+O\+G\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!C\+\_\+\+L\+O\+G\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH@{C\+\_\+\+L\+O\+G\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH}}}\hypertarget{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a455ddaad149c529e095fbfa45988de9c}{}\label{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165a455ddaad149c529e095fbfa45988de9c} 
+C\+\_\+\+L\+O\+G\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH&\\
+\hline
+
+\end{DoxyEnumFields}
+\hypertarget{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516}{}\label{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516} 
+\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!Meta\+Code@{Meta\+Code}}
+\index{Meta\+Code@{Meta\+Code}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}
+\subsubsection{\texorpdfstring{Meta\+Code}{MetaCode}}
+{\footnotesize\ttfamily enum \hyperlink{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516}{Meta\+Code}}
+
+
+
+\hyperlink{struct_metadata}{Metadata} code. 
+
+Ex\+: \textquotesingle{}S\textquotesingle{} in \char`\"{}\+S(start)0\char`\"{}. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+\_\+\+O\+P\+E\+R\+\_\+\+S\+YS@{M\+\_\+\+O\+P\+E\+R\+\_\+\+S\+YS}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!M\+\_\+\+O\+P\+E\+R\+\_\+\+S\+YS@{M\+\_\+\+O\+P\+E\+R\+\_\+\+S\+YS}}}\hypertarget{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516a0a2ce9dbaf41623d6b721275fd1b527e}{}\label{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516a0a2ce9dbaf41623d6b721275fd1b527e} 
+M\+\_\+\+O\+P\+E\+R\+\_\+\+S\+YS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+\_\+\+P\+R\+O\+G\+R\+A\+M\+\_\+\+A\+PP@{M\+\_\+\+P\+R\+O\+G\+R\+A\+M\+\_\+\+A\+PP}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!M\+\_\+\+P\+R\+O\+G\+R\+A\+M\+\_\+\+A\+PP@{M\+\_\+\+P\+R\+O\+G\+R\+A\+M\+\_\+\+A\+PP}}}\hypertarget{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516a53bc029afe822a363fa87b45def3674f}{}\label{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516a53bc029afe822a363fa87b45def3674f} 
+M\+\_\+\+P\+R\+O\+G\+R\+A\+M\+\_\+\+A\+PP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+\_\+\+P\+R\+O\+C\+E\+SS@{M\+\_\+\+P\+R\+O\+C\+E\+SS}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!M\+\_\+\+P\+R\+O\+C\+E\+SS@{M\+\_\+\+P\+R\+O\+C\+E\+SS}}}\hypertarget{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516a2a28e24e91d997a2669dee0d3a6e441b}{}\label{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516a2a28e24e91d997a2669dee0d3a6e441b} 
+M\+\_\+\+P\+R\+O\+C\+E\+SS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+\_\+\+I\+N\+P\+UT@{M\+\_\+\+I\+N\+P\+UT}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!M\+\_\+\+I\+N\+P\+UT@{M\+\_\+\+I\+N\+P\+UT}}}\hypertarget{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516a1db3ae498d49d699ba7aecbcc9fdcd64}{}\label{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516a1db3ae498d49d699ba7aecbcc9fdcd64} 
+M\+\_\+\+I\+N\+P\+UT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+\_\+\+O\+U\+T\+P\+UT@{M\+\_\+\+O\+U\+T\+P\+UT}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!M\+\_\+\+O\+U\+T\+P\+UT@{M\+\_\+\+O\+U\+T\+P\+UT}}}\hypertarget{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516afbe1661cc1f9f9360324c8d7db73c42c}{}\label{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516afbe1661cc1f9f9360324c8d7db73c42c} 
+M\+\_\+\+O\+U\+T\+P\+UT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+\_\+\+M\+E\+M\+O\+RY@{M\+\_\+\+M\+E\+M\+O\+RY}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!M\+\_\+\+M\+E\+M\+O\+RY@{M\+\_\+\+M\+E\+M\+O\+RY}}}\hypertarget{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516a6a318ad57207f9e297dc6606a9b1de36}{}\label{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516a6a318ad57207f9e297dc6606a9b1de36} 
+M\+\_\+\+M\+E\+M\+O\+RY&\\
+\hline
+
+\end{DoxyEnumFields}
+\hypertarget{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6}{}\label{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6} 
+\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!Meta\+Desc@{Meta\+Desc}}
+\index{Meta\+Desc@{Meta\+Desc}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}
+\subsubsection{\texorpdfstring{Meta\+Desc}{MetaDesc}}
+{\footnotesize\ttfamily enum \hyperlink{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6}{Meta\+Desc}}
+
+
+
+\hyperlink{struct_metadata}{Metadata} descriptor. 
+
+Ex\+: \char`\"{}start\char`\"{} in \char`\"{}\+S(start)0\char`\"{}. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+\_\+\+S\+T\+A\+RT@{M\+\_\+\+S\+T\+A\+RT}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!M\+\_\+\+S\+T\+A\+RT@{M\+\_\+\+S\+T\+A\+RT}}}\hypertarget{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6a1f5fe8eb11ed9b69d851c4e797030c12}{}\label{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6a1f5fe8eb11ed9b69d851c4e797030c12} 
+M\+\_\+\+S\+T\+A\+RT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+\_\+\+R\+UN@{M\+\_\+\+R\+UN}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!M\+\_\+\+R\+UN@{M\+\_\+\+R\+UN}}}\hypertarget{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6a9ba20817f9d08698b0ac9238b525492b}{}\label{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6a9ba20817f9d08698b0ac9238b525492b} 
+M\+\_\+\+R\+UN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+\_\+\+E\+ND@{M\+\_\+\+E\+ND}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!M\+\_\+\+E\+ND@{M\+\_\+\+E\+ND}}}\hypertarget{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6ac386bc31cf11dd167c2719ee836d9bec}{}\label{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6ac386bc31cf11dd167c2719ee836d9bec} 
+M\+\_\+\+E\+ND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+\_\+\+A\+L\+L\+OC@{M\+\_\+\+A\+L\+L\+OC}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!M\+\_\+\+A\+L\+L\+OC@{M\+\_\+\+A\+L\+L\+OC}}}\hypertarget{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6a668a2783f5f59dfc18adf6b1395764e2}{}\label{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6a668a2783f5f59dfc18adf6b1395764e2} 
+M\+\_\+\+A\+L\+L\+OC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+\_\+\+P\+R\+I\+N\+T\+ER@{M\+\_\+\+P\+R\+I\+N\+T\+ER}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!M\+\_\+\+P\+R\+I\+N\+T\+ER@{M\+\_\+\+P\+R\+I\+N\+T\+ER}}}\hypertarget{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6a03bc038776a053629197e78663d6bff9}{}\label{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6a03bc038776a053629197e78663d6bff9} 
+M\+\_\+\+P\+R\+I\+N\+T\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+\_\+\+K\+E\+Y\+B\+O\+A\+RD@{M\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!M\+\_\+\+K\+E\+Y\+B\+O\+A\+RD@{M\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}}}\hypertarget{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6aa36e6f6485781d5efe624652e1de0c08}{}\label{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6aa36e6f6485781d5efe624652e1de0c08} 
+M\+\_\+\+K\+E\+Y\+B\+O\+A\+RD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+\_\+\+H\+A\+R\+D\+\_\+\+D\+R\+I\+VE@{M\+\_\+\+H\+A\+R\+D\+\_\+\+D\+R\+I\+VE}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!M\+\_\+\+H\+A\+R\+D\+\_\+\+D\+R\+I\+VE@{M\+\_\+\+H\+A\+R\+D\+\_\+\+D\+R\+I\+VE}}}\hypertarget{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6a6b5211fad8824fe5db4c66b3f4416307}{}\label{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6a6b5211fad8824fe5db4c66b3f4416307} 
+M\+\_\+\+H\+A\+R\+D\+\_\+\+D\+R\+I\+VE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+\_\+\+M\+O\+N\+I\+T\+OR@{M\+\_\+\+M\+O\+N\+I\+T\+OR}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!M\+\_\+\+M\+O\+N\+I\+T\+OR@{M\+\_\+\+M\+O\+N\+I\+T\+OR}}}\hypertarget{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6adf417211e35fe0b31f9cba1be33df34d}{}\label{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6adf417211e35fe0b31f9cba1be33df34d} 
+M\+\_\+\+M\+O\+N\+I\+T\+OR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+\_\+\+C\+A\+C\+HE@{M\+\_\+\+C\+A\+C\+HE}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!M\+\_\+\+C\+A\+C\+HE@{M\+\_\+\+C\+A\+C\+HE}}}\hypertarget{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6af2413db6070583845c79a1b3cffb97e6}{}\label{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6af2413db6070583845c79a1b3cffb97e6} 
+M\+\_\+\+C\+A\+C\+HE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\hypertarget{_sim_data_structs_8h_abb975842c33f234db92dd499da918e38}{}\label{_sim_data_structs_8h_abb975842c33f234db92dd499da918e38} 
+\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!config\+Cat\+To\+String@{config\+Cat\+To\+String}}
+\index{config\+Cat\+To\+String@{config\+Cat\+To\+String}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}
+\subsubsection{\texorpdfstring{config\+Cat\+To\+String()}{configCatToString()}}
+{\footnotesize\ttfamily static std\+::string config\+Cat\+To\+String (\begin{DoxyParamCaption}\item[{\hyperlink{_sim_data_structs_8h_a32f23b552ade08d96d49cc3061a27165}{Config\+Category}}]{cat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts config category enum to std\+::string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cat} & The category\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String equivalent of config category enum. 
+\end{DoxyReturn}
+\hypertarget{_sim_data_structs_8h_a24e011e884483975565ddb23b8b293c1}{}\label{_sim_data_structs_8h_a24e011e884483975565ddb23b8b293c1} 
+\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!get\+Time@{get\+Time}}
+\index{get\+Time@{get\+Time}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}
+\subsubsection{\texorpdfstring{get\+Time()}{getTime()}}
+{\footnotesize\ttfamily static float get\+Time (\begin{DoxyParamCaption}\item[{struct timeval}]{ref\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the time. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref\+Time} & Time of reference\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current time minus the referenced time 
+\end{DoxyReturn}
+\hypertarget{_sim_data_structs_8h_ab01de293f615315354afae658d45ad76}{}\label{_sim_data_structs_8h_ab01de293f615315354afae658d45ad76} 
+\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!get\+Time\+Stamp@{get\+Time\+Stamp}}
+\index{get\+Time\+Stamp@{get\+Time\+Stamp}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}
+\subsubsection{\texorpdfstring{get\+Time\+Stamp()}{getTimeStamp()}}
+{\footnotesize\ttfamily static std\+::string get\+Time\+Stamp (\begin{DoxyParamCaption}\item[{struct timeval}]{ref\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets a time stamp. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ref\+Time} & Time of reference\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The time stamp of the current time minus the referenced time. 
+\end{DoxyReturn}
+\hypertarget{_sim_data_structs_8h_a6cdbb3a565d76f5a328a0e22344b5d51}{}\label{_sim_data_structs_8h_a6cdbb3a565d76f5a328a0e22344b5d51} 
+\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!meta\+Code\+To\+String@{meta\+Code\+To\+String}}
+\index{meta\+Code\+To\+String@{meta\+Code\+To\+String}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}
+\subsubsection{\texorpdfstring{meta\+Code\+To\+String()}{metaCodeToString()}}
+{\footnotesize\ttfamily static std\+::string meta\+Code\+To\+String (\begin{DoxyParamCaption}\item[{\hyperlink{_sim_data_structs_8h_af2e7854cb25f6e7ebcac71cd2dd88516}{Meta\+Code}}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts metadata code enum to std\+::string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em code} & The code\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String equivalent of metadata code enum. 
+\end{DoxyReturn}
+\hypertarget{_sim_data_structs_8h_a22e5b169d39bc3bf4acf9ec5eed94146}{}\label{_sim_data_structs_8h_a22e5b169d39bc3bf4acf9ec5eed94146} 
+\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!metadata\+To\+String@{metadata\+To\+String}}
+\index{metadata\+To\+String@{metadata\+To\+String}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}
+\subsubsection{\texorpdfstring{metadata\+To\+String()}{metadataToString()}}
+{\footnotesize\ttfamily static std\+::string metadata\+To\+String (\begin{DoxyParamCaption}\item[{\hyperlink{struct_metadata}{Metadata}}]{meta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts metadta struct to std\+::string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em meta} & The metadata\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String equivalent of metadata struct 
+\end{DoxyReturn}
+\hypertarget{_sim_data_structs_8h_a23437e0e99fe92685efa5f9a5db75c12}{}\label{_sim_data_structs_8h_a23437e0e99fe92685efa5f9a5db75c12} 
+\index{Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}!meta\+Desc\+To\+String@{meta\+Desc\+To\+String}}
+\index{meta\+Desc\+To\+String@{meta\+Desc\+To\+String}!Sim\+Data\+Structs.\+h@{Sim\+Data\+Structs.\+h}}
+\subsubsection{\texorpdfstring{meta\+Desc\+To\+String()}{metaDescToString()}}
+{\footnotesize\ttfamily static std\+::string meta\+Desc\+To\+String (\begin{DoxyParamCaption}\item[{\hyperlink{_sim_data_structs_8h_abb2b49b699fce2da44bb66f1b315b6d6}{Meta\+Desc}}]{desc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts metadata description enum to std\+::string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em desc} & The description\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String equivalent of metadata description enum. 
+\end{DoxyReturn}

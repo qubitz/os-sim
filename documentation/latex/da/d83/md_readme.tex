@@ -1,0 +1,36 @@
+by Tyler Goffinet
+
+\subsection*{Build and Run Instructions}
+
+
+\begin{DoxyCode}
+make
+cd bin
+./sim02 config\_<#>.conf
+\end{DoxyCode}
+
+
+Where \textquotesingle{}$<$\#$>$\textquotesingle{} in {\ttfamily ./sim02 config\+\_\+$<$\#$>$.conf} is the configuration number of the desired file.
+
+Additionally, there {\bfseries must} be an {\ttfamily $<$A$>$} folder in {\ttfamily bin} if a config file calls for the output file to be in {\ttfamily $<$A$>$/someoutputfile.out} for example.
+
+\subsection*{Dependancies}
+
+Required dependancies for Sim2\+:
+
+\subsubsection*{Ubuntu}
+
+
+\begin{DoxyCode}
+sudo apt-get install libboost-all-dev
+\end{DoxyCode}
+
+
+\#\#\# mac\+OS \#\#\# 
+\begin{DoxyCode}
+brew install boost
+\end{DoxyCode}
+
+
+\begin{quote}
+It has been my experience that the C\+F\+L\+AG variable parameter in the Makefile must match the library location in your computer\textquotesingle{}s directory. However, while testing on Ubuntu.\+cse.\+unr.\+edu I was proved wrong for what that\textquotesingle{}s worth.\end{quote}

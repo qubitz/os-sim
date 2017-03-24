@@ -1,0 +1,218 @@
+Configuration File Data
+Processor = 12 ms/cycle
+Monitor = 30 ms/cycle
+Hard drive = 18 ms/cycle
+Printer = 50 ms/cycle
+Keyboard = 5 ms/cycle
+Memory = 25 ms/cycle
+Printer quantity = 4
+Hard drive quantity = 2
+Logged to: monitor and logfile_1.lgf
+
+Meta-Data Metrics
+P(run)10 - 120 ms
+I(hard drive)6 - 108 ms
+M(allocate)8 - 200 ms
+O(hard drive)8 - 144 ms
+I(keyboard)6 - 30 ms
+O(hard drive)13 - 234 ms
+P(run)12 - 144 ms
+M(allocate)6 - 150 ms
+I(hard drive)12 - 216 ms
+O(hard drive)7 - 126 ms
+I(hard drive)7 - 126 ms
+O(printer)15 - 750 ms
+I(keyboard)14 - 70 ms
+M(allocate)25 - 625 ms
+O(hard drive)9 - 162 ms
+P(run)10 - 120 ms
+M(allocate)15 - 375 ms
+I(keyboard)15 - 75 ms
+O(printer)5 - 250 ms
+I(hard drive)12 - 216 ms
+O(hard drive)6 - 108 ms
+I(hard drive)6 - 108 ms
+O(printer)15 - 750 ms
+P(run)15 - 180 ms
+P(run)11 - 132 ms
+M(allocate)14 - 350 ms
+P(run)11 - 132 ms
+I(keyboard)13 - 65 ms
+P(run)11 - 132 ms
+P(run)13 - 156 ms
+O(monitor)5 - 25 ms
+I(keyboard)12 - 60 ms
+O(printer)12 - 600 ms
+P(run)13 - 156 ms
+P(run)12 - 144 ms
+P(run)5 - 60 ms
+I(hard drive)15 - 270 ms
+O(hard drive)11 - 198 ms
+I(hard drive)12 - 216 ms
+O(printer)15 - 750 ms
+I(hard drive)6 - 108 ms
+P(run)7 - 84 ms
+P(run)12 - 144 ms
+P(run)5 - 60 ms
+P(run)10 - 120 ms
+P(run)12 - 144 ms
+O(printer)10 - 500 ms
+P(run)8 - 96 ms
+P(run)14 - 168 ms
+I(hard drive)10 - 180 ms
+O(hard drive)15 - 270 ms
+I(keyboard)14 - 70 ms
+P(run)5 - 60 ms
+O(printer)6 - 300 ms
+P(run)15 - 180 ms
+P(run)11 - 132 ms
+I(keyboard)15 - 75 ms
+O(hard drive)5 - 90 ms
+I(hard drive)5 - 90 ms
+P(run)8 - 96 ms
+O(printer)6 - 300 ms
+P(run)10 - 120 ms
+P(run)13 - 156 ms
+I(keyboard)5 - 25 ms
+P(run)8 - 96 ms
+
+OS: loading application 1
+OS: loading application 2
+OS: loading application 3
+0.000001 - Simulator program starting
+0.000091 - OS: starting application 1
+5.370977 - OS: terminating application 1
+0.000111 - Application 1: processing action: start
+0.119330 - Application 1: processing action: end
+0.119407 - Application 1: hard drive input: start
+0.226793 - Application 1: hard drive input: end - HDD 0
+0.226824 - Application 1: allocating memory
+0.426066 - Application 1: memory allocated at 0x00000000
+0.426109 - Application 1: hard drive output: start
+0.569447 - Application 1: hard drive output: end - HDD 1
+0.569471 - Application 1: keyboard input: start
+0.598800 - Application 1: keyboard input: end - KBD 0
+0.598831 - Application 1: hard drive output: start
+0.832122 - Application 1: hard drive output: end - HDD 0
+0.832144 - Application 1: processing action: start
+0.975361 - Application 1: processing action: end
+0.975389 - Application 1: allocating memory
+1.124614 - Application 1: memory allocated at 0x00000040
+1.124649 - Application 1: hard drive input: start
+1.339971 - Application 1: hard drive input: end - HDD 1
+1.339994 - Application 1: hard drive output: start
+1.465311 - Application 1: hard drive output: end - HDD 0
+1.465373 - Application 1: hard drive input: start
+1.590671 - Application 1: hard drive input: end - HDD 1
+1.590701 - Application 1: printer output: start
+2.340072 - Application 1: printer output: end - PRNT 0
+2.340108 - Application 1: keyboard input: start
+2.409423 - Application 1: keyboard input: end - KBD 0
+2.409449 - Application 1: allocating memory
+3.033666 - Application 1: memory allocated at 0x00000080
+3.033700 - Application 1: hard drive output: start
+3.195020 - Application 1: hard drive output: end - HDD 0
+3.195040 - Application 1: processing action: start
+3.314256 - Application 1: processing action: end
+3.314285 - Application 1: allocating memory
+3.688512 - Application 1: memory allocated at 0x000000c0
+3.688547 - Application 1: keyboard input: start
+3.762860 - Application 1: keyboard input: end - KBD 0
+3.762995 - Application 1: printer output: start
+4.012316 - Application 1: printer output: end - PRNT 1
+4.012347 - Application 1: hard drive input: start
+4.227643 - Application 1: hard drive input: end - HDD 1
+4.227716 - Application 1: hard drive output: start
+4.335052 - Application 1: hard drive output: end - HDD 0
+4.335082 - Application 1: hard drive input: start
+4.442381 - Application 1: hard drive input: end - HDD 1
+4.442413 - Application 1: printer output: start
+5.191714 - Application 1: printer output: end - PRNT 2
+5.191742 - Application 1: processing action: start
+5.370949 - Application 1: processing action: end
+5.371009 - OS: starting application 2
+9.317923 - OS: terminating application 2
+5.371013 - Application 2: processing action: start
+5.502218 - Application 2: processing action: end
+5.502243 - Application 2: allocating memory
+5.851471 - Application 2: memory allocated at 0x00000000
+5.851505 - Application 2: processing action: start
+5.982711 - Application 2: processing action: end
+5.982741 - Application 2: keyboard input: start
+6.047055 - Application 2: keyboard input: end - KBD 0
+6.047079 - Application 2: processing action: start
+6.178294 - Application 2: processing action: end
+6.178322 - Application 2: processing action: start
+6.333529 - Application 2: processing action: end
+6.333556 - Application 2: monitor output: start
+6.357871 - Application 2: monitor output: end - MOTR 0
+6.357911 - Application 2: keyboard input: start
+6.417201 - Application 2: keyboard input: end - KBD 0
+6.417232 - Application 2: printer output: start
+7.016557 - Application 2: printer output: end - PRNT 0
+7.016578 - Application 2: processing action: start
+7.171794 - Application 2: processing action: end
+7.171820 - Application 2: processing action: start
+7.315038 - Application 2: processing action: end
+7.315068 - Application 2: processing action: start
+7.374283 - Application 2: processing action: end
+7.374324 - Application 2: hard drive input: start
+7.643614 - Application 2: hard drive input: end - HDD 0
+7.643639 - Application 2: hard drive output: start
+7.840940 - Application 2: hard drive output: end - HDD 1
+7.840971 - Application 2: hard drive input: start
+8.056260 - Application 2: hard drive input: end - HDD 0
+8.056283 - Application 2: printer output: start
+8.805583 - Application 2: printer output: end - PRNT 1
+8.805608 - Application 2: hard drive input: start
+8.912914 - Application 2: hard drive input: end - HDD 1
+8.912944 - Application 2: processing action: start
+8.996161 - Application 2: processing action: end
+8.996194 - Application 2: processing action: start
+9.139399 - Application 2: processing action: end
+9.139424 - Application 2: processing action: start
+9.198640 - Application 2: processing action: end
+9.198670 - Application 2: processing action: start
+9.317899 - Application 2: processing action: end
+9.317943 - OS: starting application 3
+12.451828 - OS: terminating application 3
+9.317961 - Application 3: processing action: start
+9.461165 - Application 3: processing action: end
+9.461192 - Application 3: printer output: start
+9.960510 - Application 3: printer output: end - PRNT 0
+9.960532 - Application 3: processing action: start
+10.055746 - Application 3: processing action: end
+10.055784 - Application 3: processing action: start
+10.222990 - Application 3: processing action: end
+10.223016 - Application 3: hard drive input: start
+10.402341 - Application 3: hard drive input: end - HDD 0
+10.402366 - Application 3: hard drive output: start
+10.671678 - Application 3: hard drive output: end - HDD 1
+10.671699 - Application 3: keyboard input: start
+10.741007 - Application 3: keyboard input: end - KBD 0
+10.741040 - Application 3: processing action: start
+10.800251 - Application 3: processing action: end
+10.800318 - Application 3: printer output: start
+11.099659 - Application 3: printer output: end - PRNT 1
+11.099680 - Application 3: processing action: start
+11.278885 - Application 3: processing action: end
+11.278924 - Application 3: processing action: start
+11.410130 - Application 3: processing action: end
+11.410159 - Application 3: keyboard input: start
+11.484464 - Application 3: keyboard input: end - KBD 0
+11.484489 - Application 3: hard drive output: start
+11.573801 - Application 3: hard drive output: end - HDD 0
+11.573824 - Application 3: hard drive input: start
+11.663122 - Application 3: hard drive input: end - HDD 1
+11.663154 - Application 3: processing action: start
+11.758369 - Application 3: processing action: end
+11.758398 - Application 3: printer output: start
+12.057724 - Application 3: printer output: end - PRNT 0
+12.057754 - Application 3: processing action: start
+12.176961 - Application 3: processing action: end
+12.176987 - Application 3: processing action: start
+12.332203 - Application 3: processing action: end
+12.332232 - Application 3: keyboard input: start
+12.356556 - Application 3: keyboard input: end - KBD 0
+12.356569 - Application 3: processing action: start
+12.451784 - Application 3: processing action: end

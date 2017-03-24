@@ -1,0 +1,352 @@
+\hypertarget{class_application}{}\section{Application Class Reference}
+\label{class_application}\index{Application@{Application}}
+
+
+Holds and operates on application data.  
+
+
+
+
+{\ttfamily \#include $<$Application.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_application_a1e27f766c7406acc8b558d9ae9833532}{Application} (unsigned int \hyperlink{class_application_ab60884b656840152d696b93a272ed2b0}{app\+ID}, bool \hyperlink{class_application_a3ace413063712e18aa3865ce2bb9cf15}{log\+To\+Monitor}, \hyperlink{class_simulator}{Simulator} $\ast$sim, \hyperlink{class_resource}{Resource} $\ast$\hyperlink{class_application_ad36f40feace83b72030e43a91a67fdd7}{printers}, \hyperlink{class_resource}{Resource} $\ast$hdds, \hyperlink{class_resource}{Resource} $\ast$kbd, \hyperlink{class_resource}{Resource} $\ast$screens)
+\begin{DoxyCompactList}\small\item\em Constructs the application. \end{DoxyCompactList}\item 
+\hyperlink{class_application_a748bca84fefb9c12661cfaa2f623748d}{$\sim$\+Application} ()
+\item 
+unsigned int \hyperlink{class_application_a3865334b425d0129d6e8bff18af4538c}{get\+App\+ID} ()
+\item 
+std\+::string \hyperlink{class_application_a66dc20ae5dc8c57d09cc4696ded5469a}{get\+Log\+Str} ()
+\item 
+std\+::string \hyperlink{class_application_a355bf7238b12a83427a08908b9fcd922}{get\+Error\+Str} ()
+\item 
+bool \hyperlink{class_application_adf6ddd24f1f16bf82e5951bf3309093b}{execute\+Instructions} ()
+\begin{DoxyCompactList}\small\item\em Executes loaded instructions. \end{DoxyCompactList}\item 
+void \hyperlink{class_application_ab8c8aabf4ae8ba4d9b7e87066c43f9b9}{set\+Start\+Time} (struct timeval start\+Time)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_process_ctrl_block}{Process\+Ctrl\+Block} \hyperlink{class_application_a70949b46aa0b4fd18ef9f0eb5ae3ff29}{P\+CB}
+\item 
+std\+::queue$<$ \hyperlink{struct_operation}{Operation} $>$ \hyperlink{class_application_a5b4ee9982980b3800888d69c06495695}{op\+Queue}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_application_a67ca128f61272b41cd1dfbaabc545414}{handle\+IO} (const \hyperlink{struct_operation}{Operation} \&op)
+\begin{DoxyCompactList}\small\item\em Handles input/output operations. \end{DoxyCompactList}\item 
+bool \hyperlink{class_application_a01f7245a18db9aaa29b6aa70378f5268}{handle\+Allocate} (const \hyperlink{struct_operation}{Operation} \&op)
+\begin{DoxyCompactList}\small\item\em Handles memory allocation operations. \end{DoxyCompactList}\item 
+void \hyperlink{class_application_a5e91885cbf2538d31c447e669a83fd4e}{sleep} (unsigned int time)
+\begin{DoxyCompactList}\small\item\em Sleeps for the specified amount of milliseconds. \end{DoxyCompactList}\item 
+void \hyperlink{class_application_a7e4c67727947c166a9568eff2fa4faa8}{output} (std\+::string output)
+\begin{DoxyCompactList}\small\item\em Ouputs string to terminal and/or file if allowed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct timeval \hyperlink{class_application_aefd0ae255459653db9ccf40ce8d71db2}{system\+Start\+Time}
+\item 
+\hyperlink{class_simulator}{Simulator} $\ast$ \hyperlink{class_application_acde9fbff36a1944448c5c7a4f955ed60}{our\+Sim}
+\item 
+\hyperlink{class_resource}{Resource} $\ast$ \hyperlink{class_application_ad36f40feace83b72030e43a91a67fdd7}{printers}
+\item 
+\hyperlink{class_resource}{Resource} $\ast$ \hyperlink{class_application_ade3a6b2853f1e85a0d529b77ae2714eb}{harddrives}
+\item 
+\hyperlink{class_resource}{Resource} $\ast$ \hyperlink{class_application_a188f7116c66c50005003d764952398d7}{keyboards}
+\item 
+\hyperlink{class_resource}{Resource} $\ast$ \hyperlink{class_application_a77952fc678e1a136dba5835a19db9bd9}{monitors}
+\item 
+bool \hyperlink{class_application_a3ace413063712e18aa3865ce2bb9cf15}{log\+To\+Monitor}
+\item 
+unsigned int \hyperlink{class_application_ab60884b656840152d696b93a272ed2b0}{app\+ID}
+\item 
+std\+::string \hyperlink{class_application_affa9d19dc0697793200d839aea5dd094}{log\+Str}
+\item 
+std\+::string \hyperlink{class_application_a53c5168b721c9fc637c21f90abf1772b}{error\+Str}
+\item 
+const \hyperlink{struct_operation}{Operation} $\ast$ \hyperlink{class_application_adedd5777c96839e4238b9956855f3965}{m\+\_\+\+Thread\+Op}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int constexpr \hyperlink{class_application_a9caeb1eb00810fa4750e8f5f4d0ad1a5}{M\+S\+\_\+\+T\+I\+M\+E\+\_\+\+F\+A\+C\+T\+OR} = 1000
+\item 
+static const float constexpr \hyperlink{class_application_af90ef45c56a06dc84388443ea24f40a0}{T\+I\+M\+E\+\_\+\+C\+O\+M\+P\+E\+N\+S\+A\+T\+I\+ON} = -\/0.\+0008
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{class_application_ae5e6102d305713891fb23b83d4acf306}{thread\+Runner} (void $\ast$object)
+\begin{DoxyCompactList}\small\item\em Thread helper for p\+\_\+thread call. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Holds and operates on application data. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_application_a1e27f766c7406acc8b558d9ae9833532}{}\label{class_application_a1e27f766c7406acc8b558d9ae9833532} 
+\index{Application@{Application}!Application@{Application}}
+\index{Application@{Application}!Application@{Application}}
+\subsubsection{\texorpdfstring{Application()}{Application()}}
+{\footnotesize\ttfamily Application\+::\+Application (\begin{DoxyParamCaption}\item[{unsigned int}]{app\+ID,  }\item[{bool}]{log\+To\+Monitor,  }\item[{\hyperlink{class_simulator}{Simulator} $\ast$}]{sim,  }\item[{\hyperlink{class_resource}{Resource} $\ast$}]{printers,  }\item[{\hyperlink{class_resource}{Resource} $\ast$}]{hdds,  }\item[{\hyperlink{class_resource}{Resource} $\ast$}]{kbds,  }\item[{\hyperlink{class_resource}{Resource} $\ast$}]{screens }\end{DoxyParamCaption})}
+
+
+
+Constructs the application. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em app\+ID} & The application identifier \\
+\hline
+\mbox{\tt in}  & {\em log\+To\+Monitor} & Should log to monitor/terminal \\
+\hline
+\mbox{\tt in}  & {\em sim} & Parent simulator \\
+\hline
+\mbox{\tt in}  & {\em printers} & Printer resources \\
+\hline
+\mbox{\tt in}  & {\em hdds} & Hard disk drive resources \\
+\hline
+\mbox{\tt in}  & {\em kbds} & Keyboards resources \\
+\hline
+\mbox{\tt in}  & {\em screens} & Monitor resouces \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_application_a748bca84fefb9c12661cfaa2f623748d}{}\label{class_application_a748bca84fefb9c12661cfaa2f623748d} 
+\index{Application@{Application}!````~Application@{$\sim$\+Application}}
+\index{````~Application@{$\sim$\+Application}!Application@{Application}}
+\subsubsection{\texorpdfstring{$\sim$\+Application()}{~Application()}}
+{\footnotesize\ttfamily Application\+::$\sim$\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_application_adf6ddd24f1f16bf82e5951bf3309093b}{}\label{class_application_adf6ddd24f1f16bf82e5951bf3309093b} 
+\index{Application@{Application}!execute\+Instructions@{execute\+Instructions}}
+\index{execute\+Instructions@{execute\+Instructions}!Application@{Application}}
+\subsubsection{\texorpdfstring{execute\+Instructions()}{executeInstructions()}}
+{\footnotesize\ttfamily bool Application\+::execute\+Instructions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Executes loaded instructions. 
+
+Handles all operations in op\+Queue class member; front to back
+
+\begin{DoxyReturn}{Returns}
+True if operation successful; false otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_application_a3865334b425d0129d6e8bff18af4538c}{}\label{class_application_a3865334b425d0129d6e8bff18af4538c} 
+\index{Application@{Application}!get\+App\+ID@{get\+App\+ID}}
+\index{get\+App\+ID@{get\+App\+ID}!Application@{Application}}
+\subsubsection{\texorpdfstring{get\+App\+I\+D()}{getAppID()}}
+{\footnotesize\ttfamily unsigned int Application\+::get\+App\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hypertarget{class_application_a355bf7238b12a83427a08908b9fcd922}{}\label{class_application_a355bf7238b12a83427a08908b9fcd922} 
+\index{Application@{Application}!get\+Error\+Str@{get\+Error\+Str}}
+\index{get\+Error\+Str@{get\+Error\+Str}!Application@{Application}}
+\subsubsection{\texorpdfstring{get\+Error\+Str()}{getErrorStr()}}
+{\footnotesize\ttfamily std\+::string Application\+::get\+Error\+Str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hypertarget{class_application_a66dc20ae5dc8c57d09cc4696ded5469a}{}\label{class_application_a66dc20ae5dc8c57d09cc4696ded5469a} 
+\index{Application@{Application}!get\+Log\+Str@{get\+Log\+Str}}
+\index{get\+Log\+Str@{get\+Log\+Str}!Application@{Application}}
+\subsubsection{\texorpdfstring{get\+Log\+Str()}{getLogStr()}}
+{\footnotesize\ttfamily std\+::string Application\+::get\+Log\+Str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hypertarget{class_application_a01f7245a18db9aaa29b6aa70378f5268}{}\label{class_application_a01f7245a18db9aaa29b6aa70378f5268} 
+\index{Application@{Application}!handle\+Allocate@{handle\+Allocate}}
+\index{handle\+Allocate@{handle\+Allocate}!Application@{Application}}
+\subsubsection{\texorpdfstring{handle\+Allocate()}{handleAllocate()}}
+{\footnotesize\ttfamily bool Application\+::handle\+Allocate (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_operation}{Operation} \&}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles memory allocation operations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & The memory operation data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if operation was sucessful; false otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_application_a67ca128f61272b41cd1dfbaabc545414}{}\label{class_application_a67ca128f61272b41cd1dfbaabc545414} 
+\index{Application@{Application}!handle\+IO@{handle\+IO}}
+\index{handle\+IO@{handle\+IO}!Application@{Application}}
+\subsubsection{\texorpdfstring{handle\+I\+O()}{handleIO()}}
+{\footnotesize\ttfamily int Application\+::handle\+IO (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_operation}{Operation} \&}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles input/output operations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & The input/output operation data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the number of the requested resource. 
+\end{DoxyReturn}
+\hypertarget{class_application_a7e4c67727947c166a9568eff2fa4faa8}{}\label{class_application_a7e4c67727947c166a9568eff2fa4faa8} 
+\index{Application@{Application}!output@{output}}
+\index{output@{output}!Application@{Application}}
+\subsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily void Application\+::output (\begin{DoxyParamCaption}\item[{std\+::string}]{output }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ouputs string to terminal and/or file if allowed. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em output} & String to out \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_application_ab8c8aabf4ae8ba4d9b7e87066c43f9b9}{}\label{class_application_ab8c8aabf4ae8ba4d9b7e87066c43f9b9} 
+\index{Application@{Application}!set\+Start\+Time@{set\+Start\+Time}}
+\index{set\+Start\+Time@{set\+Start\+Time}!Application@{Application}}
+\subsubsection{\texorpdfstring{set\+Start\+Time()}{setStartTime()}}
+{\footnotesize\ttfamily void Application\+::set\+Start\+Time (\begin{DoxyParamCaption}\item[{struct timeval}]{start\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hypertarget{class_application_a5e91885cbf2538d31c447e669a83fd4e}{}\label{class_application_a5e91885cbf2538d31c447e669a83fd4e} 
+\index{Application@{Application}!sleep@{sleep}}
+\index{sleep@{sleep}!Application@{Application}}
+\subsubsection{\texorpdfstring{sleep()}{sleep()}}
+{\footnotesize\ttfamily void Application\+::sleep (\begin{DoxyParamCaption}\item[{unsigned int}]{msecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sleeps for the specified amount of milliseconds. 
+
+Loops until desired time is equal to current time
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em msecs} & Millisecs to sleep \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_application_ae5e6102d305713891fb23b83d4acf306}{}\label{class_application_ae5e6102d305713891fb23b83d4acf306} 
+\index{Application@{Application}!thread\+Runner@{thread\+Runner}}
+\index{thread\+Runner@{thread\+Runner}!Application@{Application}}
+\subsubsection{\texorpdfstring{thread\+Runner}{threadRunner}}
+{\footnotesize\ttfamily void$\ast$ thread\+Runner (\begin{DoxyParamCaption}\item[{void $\ast$}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Thread helper for p\+\_\+thread call. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & Pointer to application class instance\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns given pointer to application class instance 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_application_ab60884b656840152d696b93a272ed2b0}{}\label{class_application_ab60884b656840152d696b93a272ed2b0} 
+\index{Application@{Application}!app\+ID@{app\+ID}}
+\index{app\+ID@{app\+ID}!Application@{Application}}
+\subsubsection{\texorpdfstring{app\+ID}{appID}}
+{\footnotesize\ttfamily unsigned int Application\+::app\+ID\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_application_a53c5168b721c9fc637c21f90abf1772b}{}\label{class_application_a53c5168b721c9fc637c21f90abf1772b} 
+\index{Application@{Application}!error\+Str@{error\+Str}}
+\index{error\+Str@{error\+Str}!Application@{Application}}
+\subsubsection{\texorpdfstring{error\+Str}{errorStr}}
+{\footnotesize\ttfamily std\+::string Application\+::error\+Str\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_application_ade3a6b2853f1e85a0d529b77ae2714eb}{}\label{class_application_ade3a6b2853f1e85a0d529b77ae2714eb} 
+\index{Application@{Application}!harddrives@{harddrives}}
+\index{harddrives@{harddrives}!Application@{Application}}
+\subsubsection{\texorpdfstring{harddrives}{harddrives}}
+{\footnotesize\ttfamily \hyperlink{class_resource}{Resource}$\ast$ Application\+::harddrives\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_application_a188f7116c66c50005003d764952398d7}{}\label{class_application_a188f7116c66c50005003d764952398d7} 
+\index{Application@{Application}!keyboards@{keyboards}}
+\index{keyboards@{keyboards}!Application@{Application}}
+\subsubsection{\texorpdfstring{keyboards}{keyboards}}
+{\footnotesize\ttfamily \hyperlink{class_resource}{Resource}$\ast$ Application\+::keyboards\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_application_affa9d19dc0697793200d839aea5dd094}{}\label{class_application_affa9d19dc0697793200d839aea5dd094} 
+\index{Application@{Application}!log\+Str@{log\+Str}}
+\index{log\+Str@{log\+Str}!Application@{Application}}
+\subsubsection{\texorpdfstring{log\+Str}{logStr}}
+{\footnotesize\ttfamily std\+::string Application\+::log\+Str\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_application_a3ace413063712e18aa3865ce2bb9cf15}{}\label{class_application_a3ace413063712e18aa3865ce2bb9cf15} 
+\index{Application@{Application}!log\+To\+Monitor@{log\+To\+Monitor}}
+\index{log\+To\+Monitor@{log\+To\+Monitor}!Application@{Application}}
+\subsubsection{\texorpdfstring{log\+To\+Monitor}{logToMonitor}}
+{\footnotesize\ttfamily bool Application\+::log\+To\+Monitor\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_application_adedd5777c96839e4238b9956855f3965}{}\label{class_application_adedd5777c96839e4238b9956855f3965} 
+\index{Application@{Application}!m\+\_\+\+Thread\+Op@{m\+\_\+\+Thread\+Op}}
+\index{m\+\_\+\+Thread\+Op@{m\+\_\+\+Thread\+Op}!Application@{Application}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Thread\+Op}{m\_ThreadOp}}
+{\footnotesize\ttfamily const \hyperlink{struct_operation}{Operation}$\ast$ Application\+::m\+\_\+\+Thread\+Op\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_application_a77952fc678e1a136dba5835a19db9bd9}{}\label{class_application_a77952fc678e1a136dba5835a19db9bd9} 
+\index{Application@{Application}!monitors@{monitors}}
+\index{monitors@{monitors}!Application@{Application}}
+\subsubsection{\texorpdfstring{monitors}{monitors}}
+{\footnotesize\ttfamily \hyperlink{class_resource}{Resource}$\ast$ Application\+::monitors\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_application_a9caeb1eb00810fa4750e8f5f4d0ad1a5}{}\label{class_application_a9caeb1eb00810fa4750e8f5f4d0ad1a5} 
+\index{Application@{Application}!M\+S\+\_\+\+T\+I\+M\+E\+\_\+\+F\+A\+C\+T\+OR@{M\+S\+\_\+\+T\+I\+M\+E\+\_\+\+F\+A\+C\+T\+OR}}
+\index{M\+S\+\_\+\+T\+I\+M\+E\+\_\+\+F\+A\+C\+T\+OR@{M\+S\+\_\+\+T\+I\+M\+E\+\_\+\+F\+A\+C\+T\+OR}!Application@{Application}}
+\subsubsection{\texorpdfstring{M\+S\+\_\+\+T\+I\+M\+E\+\_\+\+F\+A\+C\+T\+OR}{MS\_TIME\_FACTOR}}
+{\footnotesize\ttfamily const int constexpr Application\+::\+M\+S\+\_\+\+T\+I\+M\+E\+\_\+\+F\+A\+C\+T\+OR = 1000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\hypertarget{class_application_a5b4ee9982980b3800888d69c06495695}{}\label{class_application_a5b4ee9982980b3800888d69c06495695} 
+\index{Application@{Application}!op\+Queue@{op\+Queue}}
+\index{op\+Queue@{op\+Queue}!Application@{Application}}
+\subsubsection{\texorpdfstring{op\+Queue}{opQueue}}
+{\footnotesize\ttfamily std\+::queue$<$\hyperlink{struct_operation}{Operation}$>$ Application\+::op\+Queue}
+
+\hypertarget{class_application_acde9fbff36a1944448c5c7a4f955ed60}{}\label{class_application_acde9fbff36a1944448c5c7a4f955ed60} 
+\index{Application@{Application}!our\+Sim@{our\+Sim}}
+\index{our\+Sim@{our\+Sim}!Application@{Application}}
+\subsubsection{\texorpdfstring{our\+Sim}{ourSim}}
+{\footnotesize\ttfamily \hyperlink{class_simulator}{Simulator}$\ast$ Application\+::our\+Sim\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_application_a70949b46aa0b4fd18ef9f0eb5ae3ff29}{}\label{class_application_a70949b46aa0b4fd18ef9f0eb5ae3ff29} 
+\index{Application@{Application}!P\+CB@{P\+CB}}
+\index{P\+CB@{P\+CB}!Application@{Application}}
+\subsubsection{\texorpdfstring{P\+CB}{PCB}}
+{\footnotesize\ttfamily \hyperlink{struct_process_ctrl_block}{Process\+Ctrl\+Block} Application\+::\+P\+CB}
+
+\hypertarget{class_application_ad36f40feace83b72030e43a91a67fdd7}{}\label{class_application_ad36f40feace83b72030e43a91a67fdd7} 
+\index{Application@{Application}!printers@{printers}}
+\index{printers@{printers}!Application@{Application}}
+\subsubsection{\texorpdfstring{printers}{printers}}
+{\footnotesize\ttfamily \hyperlink{class_resource}{Resource}$\ast$ Application\+::printers\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_application_aefd0ae255459653db9ccf40ce8d71db2}{}\label{class_application_aefd0ae255459653db9ccf40ce8d71db2} 
+\index{Application@{Application}!system\+Start\+Time@{system\+Start\+Time}}
+\index{system\+Start\+Time@{system\+Start\+Time}!Application@{Application}}
+\subsubsection{\texorpdfstring{system\+Start\+Time}{systemStartTime}}
+{\footnotesize\ttfamily struct timeval Application\+::system\+Start\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_application_af90ef45c56a06dc84388443ea24f40a0}{}\label{class_application_af90ef45c56a06dc84388443ea24f40a0} 
+\index{Application@{Application}!T\+I\+M\+E\+\_\+\+C\+O\+M\+P\+E\+N\+S\+A\+T\+I\+ON@{T\+I\+M\+E\+\_\+\+C\+O\+M\+P\+E\+N\+S\+A\+T\+I\+ON}}
+\index{T\+I\+M\+E\+\_\+\+C\+O\+M\+P\+E\+N\+S\+A\+T\+I\+ON@{T\+I\+M\+E\+\_\+\+C\+O\+M\+P\+E\+N\+S\+A\+T\+I\+ON}!Application@{Application}}
+\subsubsection{\texorpdfstring{T\+I\+M\+E\+\_\+\+C\+O\+M\+P\+E\+N\+S\+A\+T\+I\+ON}{TIME\_COMPENSATION}}
+{\footnotesize\ttfamily const float constexpr Application\+::\+T\+I\+M\+E\+\_\+\+C\+O\+M\+P\+E\+N\+S\+A\+T\+I\+ON = -\/0.\+0008\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inc/\hyperlink{_application_8h}{Application.\+h}\item 
+src/\hyperlink{_application_8cpp}{Application.\+cpp}\end{DoxyCompactItemize}
