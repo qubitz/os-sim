@@ -13,7 +13,7 @@ Features:
 * Process scheduling
 * Resource managing
 
-[Screenshot](imageurlhere)
+![Screenshot](https://github.com/qubytes/os-sim/blob/actual/pics/screenshot.png)
 
 How to Run
 ----------
