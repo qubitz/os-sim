@@ -3,7 +3,7 @@
 /**
  * @file main.cpp
  *
- * @brief main file for simulator CS446 project at University of Nevada, Reno
+ * @brief main file for simulator project 
  *
  * @details This files initializes and runs the simulator
  *

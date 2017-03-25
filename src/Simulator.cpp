@@ -3,8 +3,7 @@
 /**
  * @file Simulator.cpp
  *
- * @brief Simulator class implementation for simulator CS446 project
- *           at University of Nevada, Reno
+ * @brief Simulator class implementation for simulator project
  *
  * @details This file manage and controls the simulator
  *

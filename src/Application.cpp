@@ -3,8 +3,7 @@
 /**
  * @file Application.cpp
  *
- * @brief Application class implementation for simulator CS446 project
- *           at University of Nevada, Reno
+ * @brief Application class implementation for simulator project
  *
  * @details This file manages and controls an application
  *

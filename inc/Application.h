@@ -3,8 +3,7 @@
 /**
 * @file Application.h
 *
-* @brief Application class declaration for simulator CS446 project at
-*					University of Nevada, Reno
+* @brief Application class declaration for simulator project at
 *
 * @details This file manages and controls an application
 *

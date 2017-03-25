@@ -3,8 +3,7 @@
 /**
  * @file Simulator.h
  *
- * @brief Simulator class for simulator CS446 project at
- *					University of Nevada, Reno
+ * @brief Simulator class for simulator project 
  *
  * @details This file manages and controls the simulator
  *

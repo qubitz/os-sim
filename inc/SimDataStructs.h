@@ -3,8 +3,7 @@
 /**
 * @file SimDataStructs.h
 *
-* @brief Simulator data structure and functions for simulator CS446 project at
-*          University of Nevada, Reno.
+* @brief Simulator data structure and functions for simulator project at
 *
 * @details This file contains data structures and functions essential for
 *            the simulator.

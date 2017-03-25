@@ -3,8 +3,7 @@
 /**
  * @file Resource.cpp
  *
- * @brief Resource class implementation for simulator CS446 project
- *           at University of Nevada, Reno
+ * @brief Resource class implementation for simulator project
  *
  * @details This file manages and controls a resource
  *
